@@ -1,0 +1,982 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Four Ages of British Culture</title>
+<style>
+  :root {
+    --ground: #E7E8E3;
+    --surface: #F3F4F0;
+    --plate: #EDEEE8;
+    --ink: #191C1B;
+    --ink-soft: #545956;
+    --ink-faint: #7C817D;
+    --rule: #C9CBC3;
+    --accent: #2B3FB5;
+
+    --era-1: #A06C1B;
+    --era-2: #2F5E6E;
+    --era-3: #A8305F;
+    --era-4: #C4392C;
+
+    --maxw: 1140px;
+    --measure: 66ch;
+
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131614;
+      --surface: #1B1F1D;
+      --plate: #1F2421;
+      --ink: #E9EAE4;
+      --ink-soft: #A7AEA8;
+      --ink-faint: #7B827D;
+      --rule: #2F3431;
+      --accent: #8C9CFF;
+
+      --era-1: #D6A64C;
+      --era-2: #6BA5B8;
+      --era-3: #DE6F9C;
+      --era-4: #F0705F;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- masthead ---------- */
+
+  header.top { padding: 60px 0 40px; border-bottom: 1px solid var(--rule); }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(38px, 6.6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 16px 0 0;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+
+  .standfirst {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin: 22px 0 0;
+    text-wrap: pretty;
+  }
+
+  .hero-strip {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin: 34px 0 0;
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-strip figure { margin: 0; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .hero-strip svg { width: 100%; height: auto; max-height: 96px; }
+  .hero-strip figcaption {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: var(--ink-faint);
+    line-height: 1.4;
+  }
+
+  .jump { display: flex; flex-wrap: wrap; margin-top: 26px; }
+  .jump a {
+    flex: 1 1 190px;
+    padding: 13px 0 0;
+    border-top: 3px solid var(--tint);
+    margin-right: 22px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .jump a:last-child { margin-right: 0; }
+  .jump .n {
+    display: block;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: var(--tint);
+    margin-bottom: 3px;
+  }
+  .jump .t { font-size: 16px; font-weight: 600; line-height: 1.25; }
+  .jump a:hover .t { color: var(--tint); }
+
+  /* ---------- sections ---------- */
+
+  section { padding: 56px 0; border-top: 1px solid var(--rule); }
+  section:first-of-type { border-top: none; }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.12;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  /* ---------- era blocks ---------- */
+
+  .era-head {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 8px 26px;
+    align-items: baseline;
+    padding-bottom: 16px;
+  }
+  .era-years {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--tint);
+  }
+  .era-head h2 { font-size: 38px; }
+  .era-head .drive {
+    grid-column: 2;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 60ch;
+    text-wrap: pretty;
+    margin: 0;
+  }
+  .era-head .drive b { color: var(--ink); font-weight: 600; }
+
+  .band { height: 6px; background: var(--tint); margin-bottom: 26px; }
+
+  /* illustration + rosters */
+
+  .showcase {
+    display: grid;
+    grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+    gap: 26px;
+    align-items: start;
+    margin-bottom: 26px;
+  }
+
+  figure.plate {
+    margin: 0;
+    background: var(--plate);
+    border: 1px solid var(--rule);
+    padding: 20px 20px 14px;
+    color: var(--tint);
+  }
+  figure.plate svg { width: 100%; height: auto; display: block; }
+  figure.plate figcaption {
+    margin-top: 14px;
+    padding-top: 11px;
+    border-top: 1px solid var(--rule);
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+  figure.plate figcaption b { color: var(--ink); font-weight: 600; }
+
+  .rosters { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 24px; }
+
+  .roster h3 {
+    margin: 0 0 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tint);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--tint);
+  }
+  .roster ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
+  .roster li {
+    font-size: 15.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    padding-left: 14px;
+    border-left: 2px solid var(--rule);
+  }
+  .roster li b { color: var(--ink); font-weight: 700; }
+  .roster li .meta {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-faint);
+    margin: 1px 0 2px;
+  }
+
+  /* strands */
+
+  .strands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .strand {
+    background: var(--surface);
+    padding: 20px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .strand h3 {
+    margin: 0;
+    font-size: 12px;
+    font-family: var(--mono);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tint);
+  }
+  .strand p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); text-wrap: pretty; }
+  .strand p b { color: var(--ink); font-weight: 600; }
+
+  .turn {
+    margin: 22px 0 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--tint);
+    background: var(--surface);
+    font-size: 16.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 78ch;
+  }
+  .turn b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- table ---------- */
+
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 15.5px; }
+  th, td {
+    text-align: left;
+    padding: 14px 16px 14px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  thead th {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+  }
+  tbody th { font-weight: 700; font-size: 15px; color: var(--ink); width: 190px; }
+  td.c1 { color: var(--era-1); }
+  td.c2 { color: var(--era-2); }
+  td.c3 { color: var(--era-3); }
+  td.c4 { color: var(--era-4); }
+
+  /* ---------- ideas ---------- */
+
+  .ideas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .idea { background: var(--surface); padding: 24px 22px 26px; display: flex; flex-direction: column; gap: 9px; }
+  .idea h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.2; margin: 0; }
+  .idea p { margin: 0; font-size: 15.5px; color: var(--ink-soft); text-wrap: pretty; }
+  .idea .why {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+  .idea .why b { color: var(--ink-soft); font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0 62px;
+    font-size: 14.5px;
+    color: var(--ink-faint);
+    max-width: var(--measure);
+  }
+
+  @media (max-width: 860px) {
+    .showcase { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .era-head { grid-template-columns: minmax(0, 1fr); }
+    .era-head .drive { grid-column: 1; }
+    .hero-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    tbody th { width: auto; }
+  }
+
+  @media print {
+    :root {
+      --ground: #FFFFFF; --surface: #FFFFFF; --plate: #FFFFFF;
+      --ink: #000000; --ink-soft: #222222; --ink-faint: #555555; --rule: #AAAAAA;
+    }
+    body { font-size: 11pt; }
+    section { break-inside: avoid; padding: 22px 0; }
+    .showcase, .strands, .roster { break-inside: avoid; }
+    .jump { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="eyebrow">The development of culture in Britain</div>
+    <h1>Who gets to make <em>culture</em> — and who gets to hear it</h1>
+    <p class="standfirst">
+      Across two hundred years the same thing keeps happening in Britain: a new machine makes culture
+      cheaper, a wider group of people gets hold of it, and what counts as British culture changes.
+      Four eras, four shifts in who was holding the microphone.
+    </p>
+
+    <div class="hero-strip">
+
+      <figure style="color: var(--era-1);">
+        <svg viewBox="0 0 120 92" role="img" aria-label="A gas-lit music hall stage">
+          <rect x="6" y="8" width="108" height="66" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M12 14 L34 14 L28 62 L12 62 Z" fill="currentColor" opacity="0.28"/>
+          <path d="M108 14 L86 14 L92 62 L108 62 Z" fill="currentColor" opacity="0.28"/>
+          <circle cx="60" cy="40" r="8" fill="currentColor"/>
+          <path d="M52 68 q8 -18 8 -20 q0 2 8 20 Z" fill="currentColor"/>
+          <g fill="currentColor">
+            <circle cx="20" cy="80" r="3"/><circle cx="36" cy="80" r="3"/><circle cx="52" cy="80" r="3"/>
+            <circle cx="68" cy="80" r="3"/><circle cx="84" cy="80" r="3"/><circle cx="100" cy="80" r="3"/>
+          </g>
+        </svg>
+        <figcaption>MUSIC HALL<br>1850s</figcaption>
+      </figure>
+
+      <figure style="color: var(--era-2);">
+        <svg viewBox="0 0 120 92" role="img" aria-label="A Bakelite wireless set">
+          <path d="M16 84 V32 q0 -18 44 -18 q44 0 44 18 V84 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="44" cy="52" r="17" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <line x1="44" y1="52" x2="53" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="74" y1="40" x2="94" y2="40"/><line x1="74" y1="48" x2="94" y2="48"/>
+            <line x1="74" y1="56" x2="94" y2="56"/><line x1="74" y1="64" x2="94" y2="64"/>
+          </g>
+          <circle cx="44" cy="74" r="4" fill="currentColor"/>
+          <circle cx="60" cy="74" r="4" fill="currentColor"/>
+        </svg>
+        <figcaption>THE WIRELESS<br>1922</figcaption>
+      </figure>
+
+      <figure style="color: var(--era-3);">
+        <svg viewBox="0 0 120 92" role="img" aria-label="A record player with a single on the turntable">
+          <rect x="10" y="34" width="100" height="46" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M10 34 L26 12 L110 12 L110 34" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="52" cy="57" r="18" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="52" cy="57" r="7" fill="currentColor"/>
+          <line x1="96" y1="38" x2="74" y2="52" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="97" cy="37" r="3.5" fill="currentColor"/>
+        </svg>
+        <figcaption>THE 45<br>1962</figcaption>
+      </figure>
+
+      <figure style="color: var(--era-4);">
+        <svg viewBox="0 0 120 92" role="img" aria-label="A phone playing sound">
+          <rect x="40" y="6" width="40" height="80" rx="6" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <line x1="54" y1="13" x2="66" y2="13" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <g stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
+            <line x1="49" y1="46" x2="49" y2="54"/><line x1="56" y1="38" x2="56" y2="62"/>
+            <line x1="63" y1="30" x2="63" y2="70"/><line x1="70" y1="42" x2="70" y2="58"/>
+          </g>
+          <g stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55">
+            <path d="M90 34 q8 12 0 24"/><path d="M100 26 q14 20 0 40"/>
+            <path d="M30 34 q-8 12 0 24"/><path d="M20 26 q-14 20 0 40"/>
+          </g>
+        </svg>
+        <figcaption>THE FEED<br>2003 →</figcaption>
+      </figure>
+
+    </div>
+
+    <nav class="jump">
+      <a href="#era1" style="--tint: var(--era-1);"><span class="n">1800 – 1900</span><span class="t">Culture becomes mass-produced</span></a>
+      <a href="#era2" style="--tint: var(--era-2);"><span class="n">1900 – 1945</span><span class="t">Culture gets broadcast</span></a>
+      <a href="#era3" style="--tint: var(--era-3);"><span class="n">1950 – 1979</span><span class="t">Culture belongs to the young</span></a>
+      <a href="#era4" style="--tint: var(--era-4);"><span class="n">1980 – today</span><span class="t">Everyone becomes a broadcaster</span></a>
+    </nav>
+  </header>
+
+  <!-- ============ ERA 1 ============ -->
+  <section id="era1" style="--tint: var(--era-1);">
+    <div class="era-head">
+      <div class="era-years">1800 – 1900</div>
+      <h2>Culture becomes mass-produced</h2>
+      <p class="drive">
+        Steam presses, railways and — after the <b>1870 Education Act</b> — a population that could read.
+        For the first time culture is made in bulk, sold cheaply, and aimed at ordinary working people
+        rather than a wealthy few.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A Victorian music hall: proscenium arch, curtains, footlights and a singer on stage">
+          <rect x="14" y="14" width="372" height="196" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M14 14 H386 V56 Q200 92 14 56 Z" fill="currentColor" opacity="0.22"/>
+          <path d="M28 26 L96 26 L74 178 L28 178 Z" fill="currentColor" opacity="0.3"/>
+          <path d="M372 26 L304 26 L326 178 L372 178 Z" fill="currentColor" opacity="0.3"/>
+          <path d="M96 26 q0 100 -22 152" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M304 26 q0 100 22 152" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="200" cy="96" r="17" fill="currentColor"/>
+          <path d="M172 178 q10 -48 28 -52 q18 4 28 52 Z" fill="currentColor"/>
+          <path d="M186 132 q-22 6 -30 26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M214 132 q24 -4 30 -30" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="14" y1="188" x2="386" y2="188" stroke="currentColor" stroke-width="3"/>
+          <g fill="currentColor">
+            <circle cx="40" cy="200" r="6"/><circle cx="80" cy="200" r="6"/><circle cx="120" cy="200" r="6"/>
+            <circle cx="160" cy="200" r="6"/><circle cx="200" cy="200" r="6"/><circle cx="240" cy="200" r="6"/>
+            <circle cx="280" cy="200" r="6"/><circle cx="320" cy="200" r="6"/><circle cx="360" cy="200" r="6"/>
+          </g>
+          <g stroke="currentColor" stroke-width="2" fill="none" opacity="0.5">
+            <path d="M40 214 v6"/><path d="M80 214 v6"/><path d="M120 214 v6"/><path d="M160 214 v6"/>
+            <path d="M200 214 v6"/><path d="M240 214 v6"/><path d="M280 214 v6"/><path d="M320 214 v6"/><path d="M360 214 v6"/>
+          </g>
+          <text x="200" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">THE MUSIC HALL</text>
+        </svg>
+        <figcaption>
+          <b>Gas footlights and a singalong chorus.</b> Halls like the <b>Canterbury</b> in Lambeth — opened 1852 and
+          often called the first true music hall — sold song, comedy and beer in the same room, to audiences
+          who had never been anyone's customers before.
+        </figcaption>
+      </figure>
+
+      <div class="rosters">
+        <div class="roster">
+          <h3>People</h3>
+          <ul>
+            <li><b>Charles Dickens</b><span class="meta">1812–1870 · born Portsmouth</span>Published novels in monthly parts so anyone could afford them, then toured Britain reading them aloud to packed halls.</li>
+            <li><b>Marie Lloyd</b><span class="meta">1870–1922 · born Hoxton, London</span>The biggest star of the music hall. Sang "The Boy I Love Is Up in the Gallery" straight at the cheap seats.</li>
+            <li><b>Charlotte Brontë</b><span class="meta">1816–1855 · Haworth, Yorkshire</span>Published <em>Jane Eyre</em> in 1847 as "Currer Bell" — a man's name, to be taken seriously.</li>
+            <li><b>W. G. Grace</b><span class="meta">1848–1915 · Downend, Bristol</span>Turned cricket into a spectator sport that drew paying crowds in the tens of thousands.</li>
+            <li><b>Gilbert &amp; Sullivan</b><span class="meta">partnership from 1871 · London</span>Comic operas built for a middle-class night out; the Savoy Theatre was built for them in 1881.</li>
+            <li><b>William Morris</b><span class="meta">1834–1896 · Walthamstow</span>Arts and Crafts: argued that ordinary objects and ordinary houses were culture too.</li>
+          </ul>
+        </div>
+        <div class="roster">
+          <h3>Places</h3>
+          <ul>
+            <li><b>Blackpool, Lancashire</b><span class="meta">Tower opened 1894</span>The mill towns' seaside. Railways and the 1871 Bank Holidays Act filled it every summer.</li>
+            <li><b>Freemasons' Tavern, London</b><span class="meta">Great Queen Street · 26 October 1863</span>Where the Football Association was founded and the rules of the game were finally written down.</li>
+            <li><b>The Crystal Palace, Hyde Park</b><span class="meta">Great Exhibition, 1851</span>Six million visits in five months — mass culture as a national spectacle.</li>
+            <li><b>Haworth Parsonage, West Yorkshire</b><span class="meta">home of the Brontës</span>A moorland village that produced three of the century's most-read novelists.</li>
+            <li><b>Queen's Hall, Langham Place</b><span class="meta">first Proms, 1895</span>Henry Wood's promenade concerts, priced so a clerk could come in after work.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strands">
+      <div class="strand">
+        <h3>Reading</h3>
+        <p>Dickens publishes <b>in monthly instalments</b> from 1836 — a shilling at a time, so the whole country
+          reads the same story together. Penny dreadfuls, circulating libraries and cheap newspapers follow.</p>
+      </div>
+      <div class="strand">
+        <h3>Music &amp; stage</h3>
+        <p><b>Music hall</b> from the 1850s. Brass bands in the mill and mining towns — Black Dyke Mills band forms
+          in 1855 and still plays. The <b>Proms</b> begin in 1895, deliberately cheap.</p>
+      </div>
+      <div class="strand">
+        <h3>Everyday life</h3>
+        <p>The railway invents the day trip and the <b>seaside holiday</b>. Football's rules are written in <b>1863</b>,
+          the FA Cup follows in 1872, the Football League in 1888. Christmas is remade — cards and
+          <em>A Christmas Carol</em> both arrive in 1843.</p>
+      </div>
+      <div class="strand">
+        <h3>Who got heard</h3>
+        <p>Working-class audiences, at scale, for the first time — and women novelists, though the Brontës and
+          George Eliot both published under men's names.</p>
+      </div>
+    </div>
+
+    <p class="turn">
+      <b>The shift:</b> culture stops being something you attend if you can afford it, and becomes something
+      you buy — a serial, a match ticket, a train fare to Blackpool.
+    </p>
+  </section>
+
+  <!-- ============ ERA 2 ============ -->
+  <section id="era2" style="--tint: var(--era-2);">
+    <div class="era-head">
+      <div class="era-years">1900 – 1945</div>
+      <h2>Culture gets broadcast</h2>
+      <p class="drive">
+        Cinema, recording and radio arrive within a generation, and two world wars push everybody into the
+        same national conversation. Culture is no longer local — <b>millions now hear the same thing at the
+        same moment</b>.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A Bakelite wireless set with a tuning dial and speaker grille">
+          <path d="M40 214 V90 q0 -52 160 -52 q160 0 160 52 V214 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M40 214 V90 q0 -52 160 -52 q160 0 160 52 V214 Z" fill="currentColor" opacity="0.07"/>
+          <circle cx="130" cy="132" r="46" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="130" cy="132" r="38" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          <g stroke="currentColor" stroke-width="2" opacity="0.75">
+            <line x1="130" y1="94" x2="130" y2="102"/><line x1="157" y1="105" x2="152" y2="111"/>
+            <line x1="168" y1="132" x2="160" y2="132"/><line x1="157" y1="159" x2="152" y2="153"/>
+            <line x1="130" y1="170" x2="130" y2="162"/><line x1="103" y1="159" x2="108" y2="153"/>
+            <line x1="92" y1="132" x2="100" y2="132"/><line x1="103" y1="105" x2="108" y2="111"/>
+          </g>
+          <line x1="130" y1="132" x2="152" y2="110" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="130" cy="132" r="6" fill="currentColor"/>
+          <rect x="208" y="92" width="128" height="82" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.8">
+            <line x1="222" y1="106" x2="322" y2="106"/><line x1="222" y1="120" x2="322" y2="120"/>
+            <line x1="222" y1="134" x2="322" y2="134"/><line x1="222" y1="148" x2="322" y2="148"/>
+            <line x1="222" y1="162" x2="322" y2="162"/>
+          </g>
+          <circle cx="115" cy="194" r="9" fill="currentColor"/>
+          <circle cx="150" cy="194" r="9" fill="currentColor"/>
+          <text x="272" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="currentColor">B · B · C</text>
+        </svg>
+        <figcaption>
+          <b>One voice in every kitchen.</b> The BBC began broadcasting from <b>Savoy Hill</b> in 1922 and moved to
+          <b>Broadcasting House</b> in 1932. For the first time a family in Aberdeen and a family in Plymouth
+          heard the identical thing at the identical minute.
+        </figcaption>
+      </figure>
+
+      <div class="rosters">
+        <div class="roster">
+          <h3>People</h3>
+          <ul>
+            <li><b>John Reith</b><span class="meta">1889–1971 · born Stonehaven, Scotland</span>The BBC's first Director-General. Set its mission: to inform, educate and entertain — in that order.</li>
+            <li><b>Alfred Hitchcock</b><span class="meta">1899–1980 · born Leytonstone, London</span>Learned his craft in British studios; <em>The 39 Steps</em> (1935) made him famous before Hollywood took him.</li>
+            <li><b>Gracie Fields</b><span class="meta">1898–1979 · born above a chip shop, Rochdale</span>"Our Gracie" — a mill-town girl who became the highest-paid film star in the world in 1937.</li>
+            <li><b>George Formby</b><span class="meta">1904–1961 · Wigan</span>Ukulele, grin and Lancashire accent; the most popular British entertainer of the war years.</li>
+            <li><b>Virginia Woolf</b><span class="meta">1882–1941 · Bloomsbury, London</span><em>Mrs Dalloway</em> (1925) took the novel inside people's heads and left the plot outside.</li>
+            <li><b>Allen Lane</b><span class="meta">1902–1970 · founded Penguin, 1935</span>Sixpenny paperbacks — good books for the price of a packet of cigarettes.</li>
+            <li><b>Emmeline Pankhurst</b><span class="meta">1858–1928 · Manchester</span>Founded the WSPU in 1903; women get the vote in 1918 and on equal terms in 1928.</li>
+          </ul>
+        </div>
+        <div class="roster">
+          <h3>Places</h3>
+          <ul>
+            <li><b>Broadcasting House, Portland Place</b><span class="meta">opened 1932 · London</span>Built as a ship for the new medium; still the BBC's front door.</li>
+            <li><b>Alexandra Palace, north London</b><span class="meta">2 November 1936</span>The world's first regular high-definition television service went out from its mast.</li>
+            <li><b>Ealing Studios, west London</b><span class="meta">filming since 1902</span>The oldest continuously working film studio on earth.</li>
+            <li><b>Blackpool Tower Ballroom</b><span class="meta">Wurlitzer installed 1935</span>Dance bands and a national dance craze, broadcast live on the wireless.</li>
+            <li><b>Bloomsbury, London</b><span class="meta">the Bloomsbury Group</span>A few streets that produced Woolf, Keynes and a whole argument about modern art.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strands">
+      <div class="strand">
+        <h3>Screen</h3>
+        <p>Cinema becomes the national habit — by the late 1930s Britain buys roughly <b>20 million cinema tickets
+          a week</b>. Hitchcock, Gracie Fields and George Formby are the first mass-market British stars.</p>
+      </div>
+      <div class="strand">
+        <h3>Radio</h3>
+        <p>The <b>BBC</b> begins in 1922. Wartime bulletins, the Shipping Forecast and comedy like <em>ITMA</em>
+          become shared national furniture.</p>
+      </div>
+      <div class="strand">
+        <h3>Page &amp; music</h3>
+        <p><b>Penguin</b>, 1935: serious books for sixpence. Woolf breaks the novel apart in Bloomsbury; Vaughan
+          Williams tramps round villages writing folk songs down before they vanish.</p>
+      </div>
+      <div class="strand">
+        <h3>Who got heard</h3>
+        <p>Women, after <b>1918 and 1928</b>. Regional accents, through Fields and Formby. Jazz arrives from
+          America and Black musicians play London clubs.</p>
+      </div>
+    </div>
+
+    <p class="turn">
+      <b>The shift:</b> from many local cultures to one national one. There is now such a thing as what
+      "the country" watched, read and listened to last night.
+    </p>
+  </section>
+
+  <!-- ============ ERA 3 ============ -->
+  <section id="era3" style="--tint: var(--era-3);">
+    <div class="era-head">
+      <div class="era-years">1950 – 1979</div>
+      <h2>Culture belongs to the young</h2>
+      <p class="drive">
+        Post-war wages, near-full employment and the arrival of the <b>teenager as a paying customer</b>.
+        Add television in the front room and the <b>Windrush</b> generation from 1948, and British culture
+        stops taking its orders from the top.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A portable record player with a seven-inch single on the turntable">
+          <path d="M34 96 L86 30 L370 30 L370 96" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M34 96 L86 30 L370 30 L370 96 Z" fill="currentColor" opacity="0.08"/>
+          <rect x="34" y="96" width="336" height="110" rx="5" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="150" cy="152" r="52" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="150" cy="152" r="44" fill="currentColor" opacity="0.12"/>
+          <circle cx="150" cy="152" r="34" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <circle cx="150" cy="152" r="26" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <circle cx="150" cy="152" r="17" fill="currentColor"/>
+          <circle cx="150" cy="152" r="4" fill="var(--plate)"/>
+          <line x1="316" y1="108" x2="196" y2="140" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="318" cy="107" r="8" fill="currentColor"/>
+          <rect x="250" y="164" width="96" height="10" rx="5" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="262" cy="169" r="3" fill="currentColor"/>
+          <path d="M160 20 q40 -14 80 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <g stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6">
+            <path d="M330 140 q12 14 0 28"/><path d="M348 128 q22 26 0 52"/>
+          </g>
+          <text x="200" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">THE RECORD PLAYER</text>
+        </svg>
+        <figcaption>
+          <b>Culture you could own and carry upstairs.</b> A 7-inch single cost about six shillings and played in
+          a bedroom, not a hall. For the first time young people chose their own culture without an adult
+          in the room.
+        </figcaption>
+      </figure>
+
+      <div class="rosters">
+        <div class="roster">
+          <h3>People</h3>
+          <ul>
+            <li><b>The Beatles</b><span class="meta">Liverpool · "Love Me Do", October 1962</span>Four working-class Liverpudlians who rewrote what a pop group was allowed to be.</li>
+            <li><b>Claudia Jones</b><span class="meta">1915–1964 · Trinidad-born, based in London</span>Founded the Caribbean carnival in 1959 that grew into <b>Notting Hill Carnival</b>.</li>
+            <li><b>Mary Quant</b><span class="meta">1930–2023 · shop on the King's Road, 1955</span>Made the miniskirt, and made London a place people came to for clothes.</li>
+            <li><b>Delia Derbyshire</b><span class="meta">1937–2001 · Coventry · BBC Radiophonic Workshop</span>Built the <em>Doctor Who</em> theme in 1963 out of tape loops and a plucked wire — electronic music before synthesisers.</li>
+            <li><b>David Bowie</b><span class="meta">1947–2016 · born Brixton, raised Bromley</span>Ziggy Stardust in 1972 gave a generation permission to reinvent themselves.</li>
+            <li><b>John Osborne</b><span class="meta">1929–1994 · Royal Court, 1956</span><em>Look Back in Anger</em> put an angry working-class voice on the London stage.</li>
+            <li><b>Vivienne Westwood &amp; Malcolm McLaren</b><span class="meta">430 King's Road, from 1971</span>Their shop dressed the Sex Pistols and invented what punk looked like.</li>
+          </ul>
+        </div>
+        <div class="roster">
+          <h3>Places</h3>
+          <ul>
+            <li><b>The Cavern Club, Mathew Street, Liverpool</b><span class="meta">the Beatles played there ~292 times</span>A cellar under a fruit warehouse; the loudest argument for provincial Britain ever made.</li>
+            <li><b>Abbey Road Studios, St John's Wood</b><span class="meta">London</span>Where <em>Sgt. Pepper</em> was built — and where the studio itself became an instrument.</li>
+            <li><b>Notting Hill, west London</b><span class="meta">on the streets from 1966</span>Now Europe's biggest street carnival, drawing around two million people.</li>
+            <li><b>Carnaby Street &amp; the King's Road</b><span class="meta">"Swinging London", mid-1960s</span>Two streets that exported British youth style to the world.</li>
+            <li><b>Brighton seafront</b><span class="meta">Whitsun 1964</span>Mods and rockers fighting on the beach — the first youth culture treated as a national emergency.</li>
+            <li><b>Granada Studios, Manchester</b><span class="meta"><em>Coronation Street</em>, from 1960</span>A northern street on national television, week after week, for decades.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strands">
+      <div class="strand">
+        <h3>Music</h3>
+        <p>Skiffle, then rock'n'roll, then <b>the Beatles in 1962</b>. Caribbean sound systems bring ska and reggae
+          to Birmingham, Bristol and London. Pirate ships force the BBC to launch Radio 1 in 1967.
+          <b>Punk in 1976</b> tells everyone they can start a band tonight.</p>
+      </div>
+      <div class="strand">
+        <h3>Television</h3>
+        <p>The 1953 coronation sells the sets. <b>ITV in 1955</b> brings adverts and competition;
+          <em>Coronation Street</em> 1960, <em>Doctor Who</em> 1963, satire on <em>That Was The Week That Was</em>,
+          colour from 1967.</p>
+      </div>
+      <div class="strand">
+        <h3>Stage &amp; page</h3>
+        <p>Kitchen-sink realism puts ordinary northern lives on stage and screen —
+          <em>Look Back in Anger</em> (1956), <em>Saturday Night and Sunday Morning</em> (1960). Regional accents
+          stop being something to lose.</p>
+      </div>
+      <div class="strand">
+        <h3>Who got heard</h3>
+        <p>Teenagers with wages. Working-class writers and actors. Black British culture, moving from front
+          rooms to the street with <b>Notting Hill Carnival from 1966</b>.</p>
+      </div>
+    </div>
+
+    <p class="turn">
+      <b>The shift:</b> the audience starts making the culture. Style tribes — teds, mods, rockers, skinheads,
+      hippies, punks — are invented from below and sold back upwards.
+    </p>
+  </section>
+
+  <!-- ============ ERA 4 ============ -->
+  <section id="era4" style="--tint: var(--era-4);">
+    <div class="era-head">
+      <div class="era-years">1980 – today</div>
+      <h2>Everyone becomes a broadcaster</h2>
+      <p class="drive">
+        Cheap studios, then cheap distribution, then a phone in every pocket. The shared national moment
+        breaks into <b>millions of separate feeds</b> — and the people who were once the audience now publish
+        directly.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A phone beside a stack of sound system speakers">
+          <rect x="30" y="40" width="120" height="180" rx="14" fill="none" stroke="currentColor" stroke-width="3"/>
+          <rect x="42" y="62" width="96" height="136" fill="currentColor" opacity="0.09"/>
+          <line x1="76" y1="52" x2="104" y2="52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <line x1="58" y1="122" x2="58" y2="138"/><line x1="72" y1="104" x2="72" y2="156"/>
+            <line x1="86" y1="88" x2="86" y2="172"/><line x1="100" y1="112" x2="100" y2="148"/>
+            <line x1="114" y1="98" x2="114" y2="162"/>
+          </g>
+          <circle cx="90" cy="208" r="5" fill="currentColor"/>
+          <rect x="216" y="34" width="150" height="88" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+          <rect x="216" y="132" width="150" height="88" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="264" cy="78" r="26" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="264" cy="78" r="10" fill="currentColor"/>
+          <circle cx="264" cy="176" r="26" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="264" cy="176" r="10" fill="currentColor"/>
+          <circle cx="330" cy="66" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="330" cy="164" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55">
+            <path d="M180 92 q10 16 0 32"/><path d="M194 76 q20 32 0 64"/>
+          </g>
+          <text x="200" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">BEDROOM TO EVERYWHERE</text>
+        </svg>
+        <figcaption>
+          <b>The studio got small and the reach got huge.</b> Grime came out of tower blocks in <b>Bow, east London</b>
+          on pirate stations like Rinse FM — no label, no BBC, no permission. Twenty years later Stormzy
+          headlined Glastonbury.
+        </figcaption>
+      </figure>
+
+      <div class="rosters">
+        <div class="roster">
+          <h3>People</h3>
+          <ul>
+            <li><b>Dizzee Rascal</b><span class="meta">born 1984 · Bow, east London</span><em>Boy in da Corner</em> won the Mercury Prize in 2003 — grime's arrival, made on a school computer.</li>
+            <li><b>Stormzy</b><span class="meta">born 1993 · Thornton Heath, Croydon</span>First Black British solo artist to headline Glastonbury, 2019. Started on YouTube freestyles.</li>
+            <li><b>Adele</b><span class="meta">born 1988 · Tottenham, London</span>Went to the BRIT School in Croydon; <em>21</em> (2011) became one of the best-selling albums ever made.</li>
+            <li><b>Danny Boyle</b><span class="meta">born 1956 · Radcliffe, Greater Manchester</span><em>Trainspotting</em> (1996), then the <b>London 2012</b> opening ceremony — the NHS, Windrush and Dizzee Rascal in one stadium.</li>
+            <li><b>Zadie Smith</b><span class="meta">born 1975 · Willesden, north London</span><em>White Teeth</em> (2000) wrote multicultural London as simply the way the country is.</li>
+            <li><b>Michaela Coel</b><span class="meta">born 1987 · Hackney, London</span><em>I May Destroy You</em> (2020) — written, co-directed and starred in by the same person.</li>
+            <li><b>Jazzie B</b><span class="meta">born 1963 · Hornsey, London</span>Soul II Soul grew out of a north London sound system into a global sound.</li>
+          </ul>
+        </div>
+        <div class="roster">
+          <h3>Places</h3>
+          <ul>
+            <li><b>Bow, east London</b><span class="meta">grime, early 2000s</span>Tower blocks, pirate radio aerials and Rinse FM. A scene built with no industry behind it.</li>
+            <li><b>The Haçienda, Manchester</b><span class="meta">1982–1997</span>Factory Records' club; where acid house turned into a national youth movement in 1988.</li>
+            <li><b>Wembley Stadium</b><span class="meta">Live Aid, 13 July 1985</span>Watched by an estimated 1.5 billion people — the last truly shared broadcast moment.</li>
+            <li><b>Worthy Farm, Pilton, Somerset</b><span class="meta">Glastonbury, since 1970</span>A dairy farm that became the biggest greenfield festival in the world.</li>
+            <li><b>Goldsmiths, New Cross</b><span class="meta">the Young British Artists, from 1988</span>An art school in south London that changed what British art was for.</li>
+            <li><b>Olympic Stadium, Stratford</b><span class="meta">27 July 2012</span>Britain told its own story to the world — and put the NHS and Windrush at the centre of it.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strands">
+      <div class="strand">
+        <h3>Music</h3>
+        <p>Two-tone out of Coventry; <b>Live Aid 1985</b>; acid house and rave from 1988; Britpop's Blur-versus-Oasis
+          summer in <b>1995</b>; then <b>grime</b> from east London, UK drill, and Stormzy at Glastonbury in 2019.</p>
+      </div>
+      <div class="strand">
+        <h3>Screen</h3>
+        <p>Channel 4 arrives in 1982 with a remit to commission outsiders. Then satellite, then streaming:
+          <em>Bake Off</em>, <em>Fleabag</em>, <em>I May Destroy You</em> — but almost nobody watches them at the
+          same hour any more.</p>
+      </div>
+      <div class="strand">
+        <h3>Everyday life</h3>
+        <p>Chicken tikka masala is called <b>"a true British national dish"</b> by Foreign Secretary Robin Cook in
+          2001. More than <b>300 languages</b> are spoken in London. Festivals become a summer institution.</p>
+      </div>
+      <div class="strand">
+        <h3>Who got heard</h3>
+        <p>Anyone with a laptop. Bedroom producers and YouTubers bypass the gatekeepers entirely — and Black
+          British and South Asian voices shape the mainstream rather than sitting beside it.</p>
+      </div>
+    </div>
+
+    <p class="turn">
+      <b>The shift:</b> the gatekeepers lose control of distribution. The question stops being "will they let
+      me on?" and becomes "can I find an audience?"
+    </p>
+  </section>
+
+  <!-- ============ TABLE ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>The same story, four times over</h2>
+      <div class="eyebrow">Read across</div>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">1800 – 1900</th>
+            <th scope="col">1900 – 1945</th>
+            <th scope="col">1950 – 1979</th>
+            <th scope="col">1980 – today</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">The new machine</th>
+            <td class="c1">Steam press, railway</td>
+            <td class="c2">Film, radio, records</td>
+            <td class="c3">Television, cheap vinyl</td>
+            <td class="c4">Internet, the phone</td>
+          </tr>
+          <tr>
+            <th scope="row">Where you found it</th>
+            <td class="c1">The Canterbury, Lambeth</td>
+            <td class="c2">The Odeon; the wireless</td>
+            <td class="c3">The Cavern; the front room</td>
+            <td class="c4">The Haçienda; a feed</td>
+          </tr>
+          <tr>
+            <th scope="row">Who decided</th>
+            <td class="c1">Publishers and impresarios</td>
+            <td class="c2">Reith's BBC</td>
+            <td class="c3">Labels and TV channels</td>
+            <td class="c4">Platforms and algorithms</td>
+          </tr>
+          <tr>
+            <th scope="row">Newly heard</th>
+            <td class="c1">The industrial working class</td>
+            <td class="c2">Women; the regions</td>
+            <td class="c3">Teenagers; Black Britain</td>
+            <td class="c4">Anyone who can upload</td>
+          </tr>
+          <tr>
+            <th scope="row">Shape of the audience</th>
+            <td class="c1">A crowd</td>
+            <td class="c2">A nation, all at once</td>
+            <td class="c3">A generation</td>
+            <td class="c4">Millions of audiences of one</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ IDEAS ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Six ways to turn this into a poster</h2>
+      <div class="eyebrow">Pick one idea, not six</div>
+    </div>
+    <div class="ideas">
+
+      <div class="idea">
+        <h3>Four columns, four eras</h3>
+        <p>The table above, blown up to A3. Same rows in each column so the reader's eye travels sideways
+          and sees the change without being told.</p>
+        <p class="why"><b>Why it works:</b> the layout does the arguing — no explanatory paragraph needed.</p>
+      </div>
+
+      <div class="idea">
+        <h3>Where the sound came from</h3>
+        <p>The four objects at the top of this page, drawn big down the page: music hall stage, wireless,
+          record player, phone — each captioned with who could be heard through it.</p>
+        <p class="why"><b>Why it works:</b> one clear metaphor, drawable flat in two colours.</p>
+      </div>
+
+      <div class="idea">
+        <h3>The audience changing shape</h3>
+        <p>Four diagrams: a crowd, a nation, a generation, then a scatter of single dots. Nothing else but
+          the dates.</p>
+        <p class="why"><b>Why it works:</b> the boldest idea here, and it reads from across a corridor.</p>
+      </div>
+
+      <div class="idea">
+        <h3>A map of British culture</h3>
+        <p>An outline of Britain with real places pinned: Haworth, Blackpool, Rochdale, Liverpool's Mathew
+          Street, Coventry, Manchester's Haçienda, Bow, Worthy Farm.</p>
+        <p class="why"><b>Why it works:</b> proves the culture wasn't only made in London — and it's specific.</p>
+      </div>
+
+      <div class="idea">
+        <h3>What a teenager owned</h3>
+        <p>Four flat panels of possessions: a penny dreadful and a football; a cinema ticket and a Penguin
+          paperback; a 7-inch single and a parka; a phone.</p>
+        <p class="why"><b>Why it works:</b> personal and concrete, and it hooks anyone your own age.</p>
+      </div>
+
+      <div class="idea">
+        <h3>One year, one headline</h3>
+        <p>Four enormous dates — <b>1863</b>, <b>1922</b>, <b>1962</b>, <b>2003</b> — each with a single
+          sentence, everything else set small underneath.</p>
+        <p class="why"><b>Why it works:</b> if it's going on a wall, one hook beats four equal blocks.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    All illustrations on this page are drawn in the page itself, so the file works offline with nothing
+    loaded from the internet. Dates are the commonly accepted ones; the boundaries between eras are a
+    convenience, not a fact — the changes overlapped.
+  </footer>
+
+</div>
+
+</body>
+</html>
