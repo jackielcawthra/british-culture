@@ -144,6 +144,20 @@
   nav.more .d { display: block; font-size: 15.5px; line-height: 1.5; color: var(--ink-soft); }
   nav.more a:hover .t { color: var(--tint); }
   @media print { nav.more { display: none; } }
+
+  /* ---------- the 900-word plan blocks ---------- */
+  .plan { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+          margin-bottom: 8px; }
+  .pt { background: var(--surface); padding: 18px 20px 20px; }
+  .pt .lbl2 { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em;
+              text-transform: uppercase; color: var(--tint); margin-bottom: 8px; }
+  .pt h4 { margin: 0 0 9px; font-family: var(--serif); font-weight: 400; font-size: 20px;
+           line-height: 1.22; text-wrap: pretty; }
+  .pt p { margin: 0 0 7px; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft);
+          text-wrap: pretty; }
+  .pt p:last-child { margin-bottom: 0; }
+  .pt p b { color: var(--ink); font-weight: 600; }
+  .pt .why { border-left: 2px solid var(--tint); padding-left: 12px; margin-top: 10px; }
 </style>
 </head>
 <body>
@@ -151,68 +165,173 @@
 
 <header class="top">
   <a class="back" href="culture.html">← British Culture, the whole site</a><br>
-  <div class="eyebrow">Britain · poster ideas</div>
-  <h1>Four posters for <em>a quarter</em> of a page</h1>
-  <p class="standfirst">Music, traditions and holidays, literature, and films. A quarter of A3 is A5,
-    about the size of a postcard, so each of these is cut down to about forty words and one drawing.
-    Pick one and make it.</p>
+  <div class="eyebrow">Britain · group poster · four people</div>
+  <h1>Your quarter is <em>A4</em>. Your text is 900 words.</h1>
+  <p class="standfirst">Two things get handed in. A quarter of the group poster, which is what people
+    look at, and at least 900 words of your own writing, which is what gets marked. This page has the
+    plan for both.</p>
 
   <div class="rules">
     <div class="inner">
-      <div class="eyebrow">How big is a quarter of A3?</div>
-      <p class="big">Fold an A3 sheet in half, then in half again. That is your space:
-        <b>148 × 210 mm</b>, which is A5.</p>
+      <div class="eyebrow">The whole poster, and your bit of it</div>
+      <p class="big">Two A3 sheets side by side make one poster, 840&nbsp;mm wide. Split into four, each
+        person gets <b>A4: 210 × 297 mm</b>.</p>
 
-      <svg viewBox="0 0 300 214" role="img" aria-label="An A3 sheet divided into four quarters, one shaded"
-           style="width:100%;max-width:420px;height:auto;display:block;margin:0 0 22px;">
-        <rect x="60" y="14" width="120" height="170" fill="none" stroke="var(--rule)" stroke-width="1.5"/>
-        <rect x="60" y="14" width="60" height="85" fill="var(--accent)" opacity="0.13"/>
-        <rect x="60" y="14" width="60" height="85" fill="none" stroke="var(--accent)" stroke-width="2"/>
-        <line x1="120" y1="14" x2="120" y2="184" stroke="var(--rule)" stroke-width="1"
+      <svg viewBox="0 0 460 190" role="img"
+           aria-label="Two A3 sheets side by side, divided into four A4 panels, with one shaded"
+           style="width:100%;max-width:560px;height:auto;display:block;margin:4px 0 22px;">
+        <rect x="30" y="30" width="400" height="118" fill="none" stroke="var(--rule)" stroke-width="1.2"/>
+        <rect x="30" y="30" width="100" height="118" fill="var(--accent)" opacity="0.13"/>
+        <rect x="30" y="30" width="100" height="118" fill="none" stroke="var(--accent)" stroke-width="2.2"/>
+        <line x1="130" y1="30" x2="130" y2="148" stroke="var(--rule)" stroke-width="1"
               stroke-dasharray="4 3"/>
-        <line x1="60" y1="99" x2="180" y2="99" stroke="var(--rule)" stroke-width="1"
+        <line x1="330" y1="30" x2="330" y2="148" stroke="var(--rule)" stroke-width="1"
               stroke-dasharray="4 3"/>
-        <text x="90" y="52" text-anchor="middle" font-family="var(--mono)" font-size="8"
-              letter-spacing="1.2" fill="var(--accent)">YOURS</text>
-        <text x="90" y="64" text-anchor="middle" font-family="var(--mono)" font-size="7"
-              fill="var(--accent)">A5</text>
-        <text x="90" y="75" text-anchor="middle" font-family="var(--mono)" font-size="7"
-              fill="var(--accent)">148 × 210</text>
-        <text x="120" y="203" text-anchor="middle" font-family="var(--mono)" font-size="8"
-              letter-spacing="1.2" fill="var(--ink-faint)">A3 · 297 × 420 mm</text>
-        <line x1="196" y1="14" x2="196" y2="99" stroke="var(--ink-faint)" stroke-width="0.8"/>
-        <line x1="192" y1="14" x2="200" y2="14" stroke="var(--ink-faint)" stroke-width="0.8"/>
-        <line x1="192" y1="99" x2="200" y2="99" stroke="var(--ink-faint)" stroke-width="0.8"/>
-        <text x="206" y="52" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">210 mm</text>
-        <text x="206" y="63" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">tall</text>
-        <text x="14" y="120" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">Same</text>
-        <text x="14" y="131" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">shape as</text>
-        <text x="14" y="142" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">A3. Half</text>
-        <text x="14" y="153" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">as wide,</text>
-        <text x="14" y="164" font-family="var(--mono)" font-size="7.5" fill="var(--ink-faint)">half as tall.</text>
+        <line x1="230" y1="22" x2="230" y2="156" stroke="var(--ink-faint)" stroke-width="1.6"/>
+
+        <text x="80" y="80" text-anchor="middle" font-family="var(--mono)" font-size="9"
+              letter-spacing="1.4" fill="var(--accent)">YOURS</text>
+        <text x="80" y="95" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--accent)">A4</text>
+        <text x="80" y="107" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--accent)">210 × 297</text>
+        <text x="180" y="93" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--ink-faint)">2</text>
+        <text x="280" y="93" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--ink-faint)">3</text>
+        <text x="380" y="93" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--ink-faint)">4</text>
+
+        <line x1="30" y1="18" x2="230" y2="18" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <line x1="30" y1="14" x2="30" y2="22" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <line x1="230" y1="14" x2="230" y2="22" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <text x="130" y="11" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--ink-faint)">A3 SHEET ONE</text>
+        <line x1="230" y1="18" x2="430" y2="18" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <line x1="430" y1="14" x2="430" y2="22" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <text x="330" y="11" text-anchor="middle" font-family="var(--mono)" font-size="8"
+              fill="var(--ink-faint)">A3 SHEET TWO</text>
+
+        <line x1="30" y1="164" x2="430" y2="164" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <line x1="30" y1="160" x2="30" y2="168" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <line x1="430" y1="160" x2="430" y2="168" stroke="var(--ink-faint)" stroke-width="0.8"/>
+        <text x="230" y="180" text-anchor="middle" font-family="var(--mono)" font-size="8.5"
+              letter-spacing="1.2" fill="var(--ink-faint)">THE WHOLE POSTER · 840 mm WIDE</text>
       </svg>
     </div>
     <div class="rulegrid">
-      <div><b>Forty words. That is all.</b><p>Count them. A quarter of A3 holds about forty words before
-        it stops being a poster and starts being a leaflet.</p></div>
-      <div><b>Five lines maximum</b><p>A title, and four or five rows under it. If you have six, cut
-        one.</p></div>
-      <div><b>Title 25 mm tall</b><p>About the height of your thumb. On a full A3 you would go three
-        times bigger, but not here.</p></div>
-      <div><b>Writing 5 mm tall</b><p>A bit bigger than your normal handwriting. Rule two faint pencil
-        lines for every row so it stays straight.</p></div>
-      <div><b>One drawing only</b><p>There is no room for two. Make the one you do have big.</p></div>
-      <div><b>10 mm empty all round</b><p>Leave a clear border. It is the difference between a poster and
-        a page that got full.</p></div>
+      <div><b>Four panels in a row</b><p>Yours sits next to three others. Whatever you do, the person
+        beside you is doing too, so agree the rules before anybody starts.</p></div>
+      <div><b>Agree these five things</b><p>Border width, title height, which pen, which colours, and
+        where the year column goes. Write them down.</p></div>
+      <div><b>About 90 words on the panel</b><p>A4 holds roughly double an A5. That is a title, five or
+        six rows, and one drawing. Not your 900 words.</p></div>
+      <div><b>The 900 words are separate</b><p>They are handed in as text. The panel is the short
+        version of the same argument.</p></div>
+      <div><b>Marks are for discussion</b><p>"I will be looking at the level of detail and discussion."
+        Listing facts scores low. Explaining why they matter scores high.</p></div>
+      <div><b>Bullet points, then sentences</b><p>You may plan in bullets. What you hand in must be full
+        sentences, spellchecked and proofread.</p></div>
     </div>
   </div>
 </header>
 
+<section class="idea" style="--tint: var(--accent)">
+  <div class="idea-head"><span class="num">00</span><h2>How to hit 900 words without padding</h2></div>
+  <div class="band"></div>
+  <p class="tagline"><b>The problem:</b> 900 words is a lot if you list facts, and not much at all if you
+    discuss them. Four facts, properly discussed, will fill it.</p>
+
+  <div class="layout">
+    <figure class="mock">
+      <svg viewBox="0 0 297 420" role="img" aria-label="How 900 words divides into paragraphs">
+        <text class="ptb" x="22" y="46" style="font-size:22px">900 WORDS</text>
+        <text class="psub" x="22" y="64">Five paragraphs. That is all it is.</text>
+        <line class="tintline" x1="22" y1="76" x2="275" y2="76"/>
+
+        <rect class="objf" x="22" y="94" width="72" height="34"/>
+        <rect class="obj" x="22" y="94" width="72" height="34"/>
+        <text class="pn" x="106" y="106">100 WORDS</text>
+        <text class="pb" x="106" y="120">Introduction. What your bit is</text>
+        <text class="pb" x="106" y="131">about, and your one big point.</text>
+
+        <rect class="objf" x="22" y="146" width="145" height="34"/>
+        <rect class="obj" x="22" y="146" width="145" height="34"/>
+        <text class="pn" x="180" y="158">200 WORDS</text>
+        <text class="pb" x="180" y="172">First point</text>
+
+        <rect class="objf" x="22" y="198" width="145" height="34"/>
+        <rect class="obj" x="22" y="198" width="145" height="34"/>
+        <text class="pn" x="180" y="210">200 WORDS</text>
+        <text class="pb" x="180" y="224">Second point</text>
+
+        <rect class="objf" x="22" y="250" width="145" height="34"/>
+        <rect class="obj" x="22" y="250" width="145" height="34"/>
+        <text class="pn" x="180" y="262">200 WORDS</text>
+        <text class="pb" x="180" y="276">Third point</text>
+
+        <rect class="objf" x="22" y="302" width="145" height="34"/>
+        <rect class="obj" x="22" y="302" width="145" height="34"/>
+        <text class="pn" x="180" y="314">200 WORDS</text>
+        <text class="pb" x="180" y="328">Fourth point</text>
+
+        <line class="tintline" x1="22" y1="352" x2="275" y2="352"/>
+        <text class="ph" x="22" y="374" style="font-size:13px">Every point: say it, prove it,</text>
+        <text class="ph" x="22" y="392" style="font-size:13px">then say why it matters.</text>
+        <text class="pb" x="22" y="410">The third part is where the marks are.</text>
+      </svg>
+      <figcaption>The shape of 900 words</figcaption>
+    </figure>
+
+    <div>
+      <ol class="steps">
+        <li>Pick <b>four points</b> about your theme. Four is enough. Six will make every one of them
+          shallow, and shallow is what loses marks.</li>
+        <li>Give each point <b>200 words</b>, in three parts: <b>say it</b>, <b>prove it with a fact or
+          a date</b>, then <b>say why it matters</b>.</li>
+        <li>That third part is the discussion the teacher is marking. It is usually two or three
+          sentences beginning "This mattered because…" or "The result was…".</li>
+        <li>Write the introduction <b>last</b>, once you know what your four points turned out to
+          be.</li>
+        <li>Read the whole thing <b>out loud</b> before you hand it in. Every sentence you stumble over
+          is one to rewrite.</li>
+      </ol>
+
+      <div class="lbl">Listing versus discussing — the same fact, twice</div>
+      <div class="copy">LISTING (low marks, 18 words)
+
+  Punk started in Britain in 1976. It was
+  loud and fast and only used three chords.
+
+
+DISCUSSING (better, 74 words)
+
+  Punk arrived in Britain in 1976, and what
+  made it matter was not the noise but the
+  three chords. Learning three chords takes
+  an afternoon, so for the first time you did
+  not need lessons, money or a record company
+  to start a band. Hundreds of teenagers did.
+  This is why punk changed British music far
+  more than it changed British listening: it
+  changed who was allowed to make it.</div>
+
+      <div class="facts">
+        <div><b>The rule</b><p>If a sentence only tells the reader something happened, add a sentence
+          saying what it changed. That is how 40 words becomes 200 honestly.</p></div>
+        <div><b>Words that start discussion</b><p>"This mattered because…" · "The result was…" · "Before
+          this, you had to…" · "It is easy to miss that…" · "Compared with…"</p></div>
+        <div><b>Do not pad</b><p>No "in today's modern society". A teacher spots it instantly and it
+          costs you more than the words gain.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="idea" style="--tint: var(--era-3)">
   <div class="idea-head"><span class="num">01</span><h2>Music</h2></div>
   <div class="band"></div>
-  <p class="tagline"><b>What it shows:</b> Britain keeps making new kinds of music, and each new one cost
-    less to make than the one before.</p>
+  <p class="tagline"><b>The one big point your 900 words should make:</b> every time British music changed, it got cheaper to make, so more people were allowed to make it.</p>
 
   <div class="layout">
     <figure class="mock">
@@ -245,50 +364,70 @@
         <text class="pb" x="30" y="386" style="font-size:11px">1890: you needed a stage.</text>
         <text class="pb" x="30" y="400" style="font-size:11px">2002: you needed a computer.</text>
       </svg>
-      <figcaption>A5 · a quarter of A3 · 39 words</figcaption>
+      <figcaption>A4 · your quarter of the poster · 39 words</figcaption>
     </figure>
 
     <div>
-      <ol class="steps">
-        <li>Leave a <b>1 cm border</b> all the way round. Pencil it in first.</li>
-        <li>Write <b>MADE IN BRITAIN</b> across the top, two lines, about as tall as your thumb.</li>
-        <li>Draw a <b>record</b> next to the title. Two circles and a dot. This is your only drawing.</li>
-        <li>Rule a line under the title, then leave <b>four equal gaps</b> for the four dates.</li>
-        <li>Year on the left, name in capitals, one short line under it.</li>
-        <li>Last two lines at the bottom, under another ruled line. They are the whole point.</li>
-      </ol>
+      <div class="lbl">Your four points</div>
+      <div class="plan">
+      <div class="pt">
+        <span class="lbl2">POINT 1 · 200 WORDS</span>
+        <h4>You had to be in the room.</h4>
+        <p class="prove"><b>Prove it with:</b> Music hall in the 1890s. Marie Lloyd, the biggest star in England, singing to a packed room. There were no recordings, so a song only existed while somebody was singing it.</p>
+        <p class="why"><b>Then discuss:</b> Nobody owned a copy of anything. Music was something you went to, with hundreds of strangers, or it did not happen at all. Compare that with hearing a song alone on headphones.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 2 · 200 WORDS</span>
+        <h4>The record player made music private.</h4>
+        <p class="prove"><b>Prove it with:</b> The Beatles, Liverpool, 1962. A single cost about six shillings and played in your own bedroom.</p>
+        <p class="why"><b>Then discuss:</b> This is the first time teenagers had a culture their parents could not hear. Ask why that mattered: what changes when the people making the music are aiming at you and not at your family?</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 3 · 200 WORDS</span>
+        <h4>Punk proved you did not need permission.</h4>
+        <p class="prove"><b>Prove it with:</b> 1976. Three chords, which takes an afternoon to learn.</p>
+        <p class="why"><b>Then discuss:</b> Before punk you needed lessons, an instrument and a record company. Afterwards, hundreds of teenagers started bands in a year. It changed who was allowed to make music more than it changed what music sounded like.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 4 · 200 WORDS</span>
+        <h4>Now the studio is a bedroom.</h4>
+        <p class="prove"><b>Prove it with:</b> Grime came out of Bow in east London around 2002, made on cheap computers. Stormzy headlined Glastonbury in 2019.</p>
+        <p class="why"><b>Then discuss:</b> Nobody has to say yes any more. But something replaced the record company: an algorithm decides what gets heard, and nobody can see how. Is that more free, or just differently controlled?</p>
+      </div>
+      </div>
 
-      <div class="lbl">The exact words · 39 of them</div>
+      <div class="lbl">On the A4 panel</div>
       <div class="copy">MADE IN BRITAIN
 
-1890s  MUSIC HALL
-       A packed room, all singing.
-1962   THE BEATLES
-       Liverpool.
-1976   PUNK
-       Three chords, no permission.
-2002   GRIME
-       Made in a bedroom in Bow.
+1890s  MUSIC HALL      You had to be in the room.
+1962   THE BEATLES     Liverpool.
+1976   PUNK            Three chords, no permission.
+2002   GRIME           Made in a bedroom in Bow.
+2019   STORMZY         Headlined Glastonbury.
 
-1890: you needed a stage.
-2002: you needed a computer.</div>
+1890: you needed a stage somebody owned.
+2002: you needed a secondhand computer.
+
+About 45 words. A4 will take one or two more
+rows than A5 would, but not a paragraph.</div>
 
       <div class="facts">
-        <div><b>What to draw</b><p>One record. Two circles and a dot, about 5 cm across.</p></div>
-        <div><b>Why it's good</b><p>Four dates is enough to see the change, and the last two lines say it
-          out loud so nobody can miss it.</p></div>
-        <div><b>If you want a fifth</b><p>Add 1970 HEAVY METAL, Birmingham. But then cut a line somewhere
-          else. Forty words is the limit.</p></div>
+        <div><b>Best fact</b><p>The Beatles started as a skiffle band, playing a washboard and a box
+          with a string on it. Cheap instruments, again.</p></div>
+        <div><b>Worth looking up</b><p>Glastonbury 1970: £1 a ticket with free milk, 1,500 people. Now
+          about £400 and 210,000 people, on the same Somerset dairy farm.</p></div>
+        <div><b>Do not overlap</b><p>Leave the films to whoever has that theme, even though the Beatles
+          made films too.</p></div>
       </div>
     </div>
   </div>
 </section>
 
+
 <section class="idea" style="--tint: var(--era-2)">
   <div class="idea-head"><span class="num">02</span><h2>Traditions and holidays</h2></div>
   <div class="band"></div>
-  <p class="tagline"><b>What it shows:</b> half of Britain's traditions are hundreds of years old and half
-    started in living memory. Most people cannot tell which is which.</p>
+  <p class="tagline"><b>The one big point your 900 words should make:</b> about half of what feels like ancient British tradition was invented recently, and people cannot tell which half.</p>
 
   <div class="layout">
     <figure class="mock">
@@ -327,43 +466,58 @@
         <text class="pb" x="30" y="396" style="font-size:10.5px">Half of it is older than you think.</text>
         <text class="pb" x="30" y="409" style="font-size:10.5px">Half of it is newer.</text>
       </svg>
-      <figcaption>A5 · a quarter of A3 · 36 words</figcaption>
+      <figcaption>A4 · your quarter of the poster · 36 words</figcaption>
     </figure>
 
     <div>
-      <ol class="steps">
-        <li>Leave a <b>1 cm border</b>. Write <b>THE BRITISH YEAR</b> across the top in two lines.</li>
-        <li>Draw <b>one firework</b> in the top corner. A line going up, a circle, and lines shooting
-          out. That is your only drawing.</li>
-        <li>Put the <b>four dates down the left</b> in one straight column. Rule a faint pencil line so
-          they line up.</li>
-        <li>Name in capitals, then one short line under it saying what it is.</li>
-        <li>The last two lines go under a ruled line at the bottom. They are the point of the
-          poster.</li>
-      </ol>
+      <div class="lbl">Your four points</div>
+      <div class="plan">
+      <div class="pt">
+        <span class="lbl2">POINT 1 · 200 WORDS</span>
+        <h4>A tradition can outlive its reason.</h4>
+        <p class="prove"><b>Prove it with:</b> Bonfire Night, 5 November 1605. A group tried to blow up Parliament and failed.</p>
+        <p class="why"><b>Then discuss:</b> Britain has marked a failed crime for 420 years. Most people setting off fireworks could not tell you what happened. Ask what a tradition is once nobody remembers why they are doing it.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 2 · 200 WORDS</span>
+        <h4>Some traditions were invented to sell something.</h4>
+        <p class="prove"><b>Prove it with:</b> The Christmas card was invented in London in 1843 by Henry Cole, who had them printed and sold.</p>
+        <p class="why"><b>Then discuss:</b> It feels old and warm and it started as a product. This is worth discussing carefully: it does not make the tradition fake, but it does mean traditions are made by people, not handed down from nowhere.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 3 · 200 WORDS</span>
+        <h4>Immigration adds traditions, and they become British.</h4>
+        <p class="prove"><b>Prove it with:</b> Notting Hill Carnival began in 1966, started by London's Caribbean community. It now draws around two million people and is the biggest street festival in Europe.</p>
+        <p class="why"><b>Then discuss:</b> In under sixty years it went from a small local event to something the whole country recognises. What makes a tradition British — how old it is, or how many people keep it?</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 4 · 200 WORDS</span>
+        <h4>New ones are still arriving.</h4>
+        <p class="prove"><b>Prove it with:</b> Trick or treating arrived in Britain from America in the 1980s. Your grandparents did not do it.</p>
+        <p class="why"><b>Then discuss:</b> It already feels permanent. If a tradition can become normal in forty years, then the ones that feel ancient were once new too, and somebody at the time probably complained about them.</p>
+      </div>
+      </div>
 
-      <div class="lbl">The exact words · 36 of them</div>
+      <div class="lbl">On the A4 panel</div>
       <div class="copy">THE BRITISH YEAR
 
-1605   BONFIRE NIGHT
-       Someone tried to blow up Parliament.
-1843   CHRISTMAS CARDS
-       Invented in London.
-1966   NOTTING HILL CARNIVAL
-       Two million people.
-1980s  TRICK OR TREATING
-       Arrived from America.
+1605   BONFIRE NIGHT     Someone tried to blow
+                         up Parliament.
+1843   CHRISTMAS CARDS   Invented in London.
+1966   NOTTING HILL      Two million people.
+       CARNIVAL
+1980s  TRICK OR TREATING Arrived from America.
 
 Half of it is older than you think.
 Half of it is newer.</div>
 
       <div class="facts">
-        <div><b>What to draw</b><p>One firework. A straight line going up, a circle at the top, and five
-          short lines shooting out of it.</p></div>
-        <div><b>Why it's good</b><p>Putting Bonfire Night from 1605 next to trick or treating from the
-          1980s shows a tradition is just something people did twice.</p></div>
-        <div><b>Best fact on it</b><p>Everyone lets off fireworks on 5 November and almost nobody can
-          tell you why. Add that line if you have room for four more words.</p></div>
+        <div><b>Best fact</b><p>Everyone lets off fireworks on 5 November and almost nobody can tell
+          you why.</p></div>
+        <div><b>Worth looking up</b><p>Burns Night in Scotland, first held in 1801. Pancake Day, which is
+          genuinely medieval. Diwali in Leicester, one of the biggest outside India.</p></div>
+        <div><b>Strong ending</b><p>Ask the reader which of your four they thought was oldest. Most
+          people guess Christmas cards.</p></div>
       </div>
     </div>
   </div>
@@ -373,8 +527,7 @@ Half of it is newer.</div>
 <section class="idea" style="--tint: var(--era-1)">
   <div class="idea-head"><span class="num">03</span><h2>Literature</h2></div>
   <div class="band"></div>
-  <p class="tagline"><b>What it shows:</b> 600 years of British books on one shelf, oldest first. Each one
-    made reading cheaper or easier than the last.</p>
+  <p class="tagline"><b>The one big point your 900 words should make:</b> each big moment in British writing made reading cheaper or easier, until anyone could do it — and then anyone could write too.</p>
 
   <div class="layout">
     <figure class="mock">
@@ -419,49 +572,66 @@ Half of it is newer.</div>
         <text class="pn" x="30" y="388" style="font-size:11px">5  1997</text>
         <text class="pb" x="110" y="388" style="font-size:11px">HARRY POTTER</text>
       </svg>
-      <figcaption>A5 · a quarter of A3 · 34 words</figcaption>
+      <figcaption>A4 · your quarter of the poster · 34 words</figcaption>
     </figure>
 
     <div>
-      <ol class="steps">
-        <li>Leave a <b>1 cm border</b>. Write <b>ONE SHELF, 600 YEARS</b> at the top in two lines.</li>
-        <li>Rule <b>one shelf line</b> across, and stand <b>five books</b> on it — rectangles of
-          slightly different heights.</li>
-        <li>Number the spines <b>1 to 5</b>, oldest on the left.</li>
-        <li>Underneath, list the five: number, year, name. One extra line only for the first two.</li>
-        <li>If it will not fit, drop Jane Austen before you shrink the writing.</li>
-      </ol>
+      <div class="lbl">Your four points</div>
+      <div class="plan">
+      <div class="pt">
+        <span class="lbl2">POINT 1 · 200 WORDS</span>
+        <h4>Chaucer wrote in English when serious books were not.</h4>
+        <p class="prove"><b>Prove it with:</b> The Canterbury Tales, around 1387. Latin and French were the languages of serious writing.</p>
+        <p class="why"><b>Then discuss:</b> He was choosing the language ordinary people actually spoke. That decision is part of why English became a language worth writing books in at all. It is a bigger deal than it sounds.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 2 · 200 WORDS</span>
+        <h4>Shakespeare built the language while using it.</h4>
+        <p class="prove"><b>Prove it with:</b> Around 1,700 words are first written down in his plays: lonely, eyeball, bedroom, swagger. His theatre had standing tickets for a penny.</p>
+        <p class="why"><b>Then discuss:</b> Two things at once: he was writing for everybody, not just the educated, and he was inventing the words as he went. Discuss what it means that the most famous English writer was writing popular entertainment.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 3 · 200 WORDS</span>
+        <h4>Dickens made books affordable by selling them in pieces.</h4>
+        <p class="prove"><b>Prove it with:</b> From 1836 he published novels a chapter at a time, monthly, cheaply.</p>
+        <p class="why"><b>Then discuss:</b> People who could never afford a whole book could afford one chapter. This changed who novels were written for, and you can see it in the stories: cliffhangers, because he needed you to buy the next part.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 4 · 200 WORDS</span>
+        <h4>Cheap printing, then no gatekeeper at all.</h4>
+        <p class="prove"><b>Prove it with:</b> Penguin paperbacks, 1935, sixpence — the price of a packet of cigarettes. Harry Potter, 1997, turned down by twelve publishers first.</p>
+        <p class="why"><b>Then discuss:</b> The twelve rejections are the interesting bit. Even in 1997 somebody still had to say yes. Now anyone can publish online without permission, which raises the same question as music: who decides what gets read?</p>
+      </div>
+      </div>
 
-      <div class="lbl">The exact words · 34 of them</div>
+      <div class="lbl">On the A4 panel</div>
       <div class="copy">ONE SHELF, 600 YEARS
 
-1  1387  CHAUCER
-         Written in English, not Latin.
-2  1600  SHAKESPEARE
-         1,700 brand new words.
-3  1813  JANE AUSTEN
-4  1935  A BOOK FOR SIXPENCE
-5  1997  HARRY POTTER
+1  1387  CHAUCER      Written in English, not Latin.
+2  1600  SHAKESPEARE  1,700 brand new words.
+3  1836  DICKENS      Sold a chapter at a time.
+4  1935  PENGUIN      A book for sixpence.
+5  1997  HARRY POTTER Turned down twelve times.
 
-Every one made books cheaper.</div>
+Every one made books cheaper or easier to get.</div>
 
       <div class="facts">
-        <div><b>What to draw</b><p>Five rectangles standing on a line. Make them different heights or it
-          looks like a bar chart.</p></div>
-        <div><b>Why it's good</b><p>Everyone knows number five. Almost nobody knows number one. So people
-          start at the bit they recognise and read backwards.</p></div>
-        <div><b>Best fact on it</b><p>Nobody had written down the words <i>lonely</i>, <i>eyeball</i> or
+        <div><b>Best fact</b><p>Nobody had written down the words <i>lonely</i>, <i>eyeball</i> or
           <i>bedroom</i> before Shakespeare did.</p></div>
+        <div><b>Worth looking up</b><p>The Brontë sisters published under men's names in 1847. Sherlock
+          Holmes, 1887. The Mousetrap has run in London since 1952.</p></div>
+        <div><b>Do not overlap</b><p>The Harry Potter <i>films</i> belong to the films theme. Stick to
+          the books.</p></div>
       </div>
     </div>
   </div>
 </section>
 
+
 <section class="idea" style="--tint: var(--era-4)">
   <div class="idea-head"><span class="num">04</span><h2>Actors and films</h2></div>
   <div class="band"></div>
-  <p class="tagline"><b>What it shows:</b> Britain has been making films for a hundred years, and British
-    actors now play most of the American superheroes.</p>
+  <p class="tagline"><b>The one big point your 900 words should make:</b> Britain has spent a century training film talent that ends up working for America, and British actors now play most of the American heroes.</p>
 
   <div class="layout">
     <figure class="mock">
@@ -500,30 +670,45 @@ Every one made books cheaper.</div>
         <line class="tintline" x1="30" y1="386" x2="267" y2="386"/>
         <text class="pb" x="30" y="404" style="font-size:10.5px">They just put the accent on.</text>
       </svg>
-      <figcaption>A5 · a quarter of A3 · 40 words</figcaption>
+      <figcaption>A4 · your quarter of the poster · 40 words</figcaption>
     </figure>
 
     <div>
-      <ol class="steps">
-        <li>Leave a <b>1 cm border</b>. Write <b>THEY'RE ALL BRITISH</b> across the top in two
-          lines.</li>
-        <li>Draw a <b>clapperboard</b> in the top corner: a rectangle with a striped strip along the
-          top. It is two boxes and four diagonal lines.</li>
-        <li><b>Four dates down the left</b>, in one straight column.</li>
-        <li>Give the last row the most space. The superhero line is why people will stop and read
-          it.</li>
-        <li>Finish with the short line at the bottom: <b>they just put the accent on</b>.</li>
-      </ol>
+      <div class="lbl">Your four points</div>
+      <div class="plan">
+      <div class="pt">
+        <span class="lbl2">POINT 1 · 200 WORDS</span>
+        <h4>Britain made the director, then lost him.</h4>
+        <p class="prove"><b>Prove it with:</b> Alfred Hitchcock, born in Leytonstone in east London, made his first thriller in 1927 and worked in Britain for over ten years before moving to Hollywood in 1939.</p>
+        <p class="why"><b>Then discuss:</b> This is the pattern for the whole century. Britain trains people and America can pay them more. Is that a failure of the British film industry, or a sign of how good its training is?</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 2 · 200 WORDS</span>
+        <h4>Bond sells an idea of Britain to the world.</h4>
+        <p class="prove"><b>Prove it with:</b> Dr No, 1962. Still running more than sixty years later, and one of the most successful film series ever made.</p>
+        <p class="why"><b>Then discuss:</b> Bond is not what Britain is like. He is what Britain would like to be seen as: clever, well dressed, and still important. Discuss the difference between a country and its export version.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 3 · 200 WORDS</span>
+        <h4>The films are British-made even when they do not feel it.</h4>
+        <p class="prove"><b>Prove it with:</b> All eight Harry Potter films were made in Britain, at Leavesden Studios near Watford, employing thousands of people.</p>
+        <p class="why"><b>Then discuss:</b> This is film as an industry, not just as art: sets, crews, jobs, money. Worth arguing that the studios matter to Britain more than any single film does.</p>
+      </div>
+      <div class="pt">
+        <span class="lbl2">POINT 4 · 200 WORDS</span>
+        <h4>Now Britain supplies the heroes.</h4>
+        <p class="prove"><b>Prove it with:</b> Spider-Man, Batman and Superman have all been played by British actors: Tom Holland, Christian Bale and Robert Pattinson, and Henry Cavill.</p>
+        <p class="why"><b>Then discuss:</b> Britain has cheap drama schools and a huge theatre tradition, so it produces trained actors constantly. But they are playing America's characters, in America's films. Say what you think that tells you.</p>
+      </div>
+      </div>
 
-      <div class="lbl">The exact words · 40 of them</div>
+      <div class="lbl">On the A4 panel</div>
       <div class="copy">THEY'RE ALL BRITISH
 
-1927  HITCHCOCK
-      Made thrillers in London before Hollywood.
-1962  JAMES BOND
-      Still going 60 years later.
-2001  HARRY POTTER
-      All eight films made here.
+1927  HITCHCOCK      Made thrillers in London
+                     before Hollywood.
+1962  JAMES BOND     Still going 60 years later.
+2001  HARRY POTTER   All eight films made here.
 NOW   THE SUPERHEROES
       Spider-Man, Batman and Superman have all
       been played by British actors.
@@ -531,39 +716,38 @@ NOW   THE SUPERHEROES
 They just put the accent on.</div>
 
       <div class="facts">
-        <div><b>What to draw</b><p>A clapperboard. A rectangle, a thin strip across the top, and four
-          diagonal lines on the strip. Easier than it looks.</p></div>
-        <div><b>Why it's good</b><p>The superhero line is the one people repeat. Most of your class will
-          not know that Batman and Spider-Man were played by British actors.</p></div>
-        <div><b>Check it yourself</b><p>Tom Holland is Spider-Man. Christian Bale and Robert Pattinson
-          have both been Batman. Henry Cavill was Superman. Look them up before you write it.</p></div>
+        <div><b>Best fact</b><p>The superhero line. Most of your class will not know it, and it is the
+          one people will repeat.</p></div>
+        <div><b>Check it yourself</b><p>Tom Holland, Christian Bale, Robert Pattinson, Henry Cavill. Look
+          each one up before you write it down.</p></div>
+        <div><b>Worth looking up</b><p>Monty Python, Wallace and Gromit, and the fact that the world's
+          first moving picture was filmed in Leeds in 1888.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-
 <nav class="more">
   <a href="culture.html" style="--tint: var(--era-2);">
     <span class="n">The site</span>
     <span class="t">British Culture</span>
-    <span class="d">Nine everyday things, the four nations, and four eras.</span>
+    <span class="d">Nine everyday things, the four nations, and four eras. Use it for research.</span>
   </a>
   <a href="reading.html" style="--tint: var(--era-1);">
     <span class="n">Read</span>
     <span class="t">How British culture changed</span>
-    <span class="d">The same story written out, at four lengths.</span>
+    <span class="d">The same story written out, if you want the argument in one piece.</span>
   </a>
 </nav>
 
 <footer>
-  <p><b>Sizes for a quarter of A3.</b> Title about 25 mm tall. Everything else about 5 mm, which is a
-    bit bigger than your normal handwriting. Leave 10 mm empty all the way round.</p>
-  <p><b>Do it in pencil first.</b> Rule every line and pencil every letter, then go over the top in pen
-    and rub the pencil out. On something this small, one crossing-out shows.</p>
-  <p><b>Check the dates.</b> Look each one up before you write it on, because a teacher will check at
-    least one of them. Great Britain is England, Scotland and Wales. The United Kingdom adds Northern
-    Ireland.</p>
+  <p><b>Before you hand it in.</b> Full sentences, not bullet points. Spellchecked, then read out loud
+    once. Every date checked, because a teacher will check one of them.</p>
+  <p><b>Sizes for an A4 panel.</b> Title about 30 mm tall, everything else about 6 mm, and leave 15 mm
+    empty all the way round. Agree those three numbers with your group so the four panels match.</p>
+  <p><b>Write it yourself.</b> Everything on this page is a plan and a pile of facts to look up. The
+    900 words have to be yours, and the marks are for how you discuss them.</p>
+  <p>Great Britain is England, Scotland and Wales. The United Kingdom adds Northern Ireland.</p>
 </footer>
 
 </div>
