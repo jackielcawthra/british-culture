@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>British Culture</title>
+<style>
+  :root {
+    --ground: #E7E8E3;
+    --surface: #F3F4F0;
+    --plate: #EDEEE8;
+    --ink: #191C1B;
+    --ink-soft: #545956;
+    --ink-faint: #7C817D;
+    --rule: #C9CBC3;
+    --accent: #2B3FB5;
+
+    --era-1: #A06C1B;
+    --era-2: #2F5E6E;
+    --era-3: #A8305F;
+    --era-4: #C4392C;
+
+    --maxw: 1140px;
+    --measure: 62ch;
+
+    --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Courier New", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #131614;
+      --surface: #1B1F1D;
+      --plate: #1F2421;
+      --ink: #E9EAE4;
+      --ink-soft: #A7AEA8;
+      --ink-faint: #7B827D;
+      --rule: #2F3431;
+      --accent: #8C9CFF;
+
+      --era-1: #D6A64C;
+      --era-2: #6BA5B8;
+      --era-3: #DE6F9C;
+      --era-4: #F0705F;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17.5px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- masthead ---------- */
+
+  header.top { padding: 60px 0 40px; border-bottom: 1px solid var(--rule); }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(38px, 6.6vw, 70px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 16px 0 0;
+    text-wrap: balance;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+
+  .standfirst {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin: 22px 0 0;
+    text-wrap: pretty;
+  }
+
+  .jump { display: flex; flex-wrap: wrap; margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--rule); }
+  .jump a {
+    flex: 1 1 170px;
+    padding: 12px 0 0;
+    border-top: 3px solid var(--tint);
+    margin-right: 22px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .jump a:last-child { margin-right: 0; }
+  .jump .n {
+    display: block;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    color: var(--tint);
+    margin-bottom: 3px;
+  }
+  .jump .t { font-size: 16px; font-weight: 600; line-height: 1.25; }
+  .jump a:hover .t { color: var(--tint); }
+
+  /* ---------- sections ---------- */
+
+  section { padding: 56px 0; border-top: 1px solid var(--rule); }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 1.12;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .lede { margin: 0 0 30px; max-width: var(--measure); font-size: 18px; color: var(--ink-soft); text-wrap: pretty; }
+  .lede b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- everyday tiles ---------- */
+
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .tile {
+    background: var(--surface);
+    padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--accent);
+  }
+  .tile svg { width: 46px; height: 46px; display: block; }
+  .tile h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .tile p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--ink-soft); text-wrap: pretty; }
+  .tile p b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- nations ---------- */
+
+  .nations { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
+  .nation { border-top: 4px solid var(--tint); padding-top: 14px; }
+  .nation h3 { margin: 0 0 6px; font-size: 18px; font-weight: 700; }
+  .nation p { margin: 0; font-size: 15.5px; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ---------- era blocks ---------- */
+
+  .era-head {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 8px 26px;
+    align-items: baseline;
+    padding-bottom: 16px;
+  }
+  .era-years {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--tint);
+  }
+  .era-head h2 { font-size: 37px; }
+  .era-head .drive {
+    grid-column: 2;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    text-wrap: pretty;
+    margin: 0;
+  }
+  .era-head .drive b { color: var(--ink); font-weight: 600; }
+
+  .band { height: 6px; background: var(--tint); margin-bottom: 26px; }
+
+  .showcase {
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+    gap: 26px;
+    align-items: start;
+    margin-bottom: 26px;
+  }
+
+  figure.plate {
+    margin: 0;
+    background: var(--plate);
+    border: 1px solid var(--rule);
+    padding: 20px 20px 14px;
+    color: var(--tint);
+  }
+  figure.plate svg { width: 100%; height: auto; display: block; }
+  figure.plate figcaption {
+    margin-top: 14px;
+    padding-top: 11px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+  figure.plate figcaption b { color: var(--ink); font-weight: 600; }
+
+  .strands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .strand {
+    background: var(--surface);
+    padding: 19px 19px 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .strand h3 {
+    margin: 0;
+    font-size: 11.5px;
+    font-family: var(--mono);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tint);
+  }
+  .strand p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ink-soft); text-wrap: pretty; }
+  .strand p b { color: var(--ink); font-weight: 600; }
+
+  .names {
+    margin-top: 22px;
+    padding: 17px 20px;
+    border-left: 3px solid var(--tint);
+    background: var(--surface);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .names b { color: var(--ink); font-weight: 700; }
+  .names .lbl {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tint);
+    margin-bottom: 6px;
+  }
+
+  /* ---------- slang ---------- */
+
+  .slang { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px; }
+  .slang-col h3 {
+    margin: 0 0 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tint);
+    border-bottom: 2px solid var(--tint);
+    padding-bottom: 8px;
+  }
+  .slang-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+  .slang-col li { font-size: 15.5px; line-height: 1.4; color: var(--ink-soft); }
+  .slang-col li b { display: inline-block; color: var(--ink); font-family: var(--serif); font-size: 19px; }
+
+  /* ---------- table ---------- */
+
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 740px; font-size: 15.5px; }
+  th, td {
+    text-align: left;
+    padding: 14px 16px 14px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  thead th {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+  }
+  tbody th { font-weight: 700; font-size: 15px; color: var(--ink); width: 180px; }
+  td.c1 { color: var(--era-1); }
+  td.c2 { color: var(--era-2); }
+  td.c3 { color: var(--era-3); }
+  td.c4 { color: var(--era-4); }
+
+  /* ---------- ideas ---------- */
+
+  .ideas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .idea { background: var(--surface); padding: 23px 22px 25px; display: flex; flex-direction: column; gap: 9px; }
+  .idea h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; line-height: 1.2; margin: 0; }
+  .idea p { margin: 0; font-size: 15.5px; color: var(--ink-soft); text-wrap: pretty; }
+  .idea .why {
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed var(--rule);
+    font-size: 14px;
+    color: var(--ink-faint);
+  }
+  .idea .why b { color: var(--ink-soft); font-weight: 600; }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0 62px;
+    font-size: 14.5px;
+    color: var(--ink-faint);
+    max-width: var(--measure);
+  }
+
+  @media (max-width: 860px) { .showcase { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 720px) {
+    body { font-size: 16.5px; }
+    .era-head { grid-template-columns: minmax(0, 1fr); }
+    .era-head .drive { grid-column: 1; }
+    tbody th { width: auto; }
+  }
+
+  @media print {
+    :root {
+      --ground: #FFFFFF; --surface: #FFFFFF; --plate: #FFFFFF;
+      --ink: #000000; --ink-soft: #222222; --ink-faint: #555555; --rule: #AAAAAA;
+    }
+    body { font-size: 11pt; }
+    section { break-inside: avoid; padding: 22px 0; }
+    .showcase, .strands, .tiles { break-inside: avoid; }
+    .jump { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+  /* ---------- links to the other two pages ---------- */
+  nav.more {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 56px 0 0;
+  }
+  nav.more a {
+    background: var(--surface);
+    padding: 22px 24px 24px;
+    text-decoration: none;
+    color: var(--ink);
+    border-top: 4px solid var(--tint);
+    display: block;
+  }
+  nav.more .n {
+    display: block;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--tint);
+    margin-bottom: 8px;
+  }
+  nav.more .t {
+    display: block;
+    font-family: var(--serif);
+    font-size: 21px;
+    line-height: 1.2;
+    margin-bottom: 7px;
+  }
+  nav.more .d { display: block; font-size: 15.5px; line-height: 1.5; color: var(--ink-soft); }
+  nav.more a:hover .t { color: var(--tint); }
+  @media print { nav.more { display: none; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <div class="eyebrow">Britain · what people actually do</div>
+    <h1>British culture is mostly <em>small things</em>, done by everyone</h1>
+    <p class="standfirst">
+      Culture isn't only museums and kings. It's what you eat, what you watch, what you shout at a match,
+      and the words you use with your mates. Here's what British culture looks like now — and how it got
+      that way.
+    </p>
+
+    <nav class="jump">
+      <a href="#now" style="--tint: var(--accent);"><span class="n">Start here</span><span class="t">What it looks like today</span></a>
+      <a href="#era1" style="--tint: var(--era-1);"><span class="n">1890s</span><span class="t">Music hall and the seaside</span></a>
+      <a href="#era2" style="--tint: var(--era-2);"><span class="n">1930s</span><span class="t">Cinema and the radio</span></a>
+      <a href="#era3" style="--tint: var(--era-3);"><span class="n">1960s</span><span class="t">Records and telly</span></a>
+      <a href="#era4" style="--tint: var(--era-4);"><span class="n">Now</span><span class="t">Everyone has a phone</span></a>
+    </nav>
+  </header>
+
+  <nav class="more">
+    <a href="reading.html" style="--tint: var(--era-2);">
+      <span class="n">Read</span>
+      <span class="t">How British culture changed</span>
+      <span class="d">The same story written out, at four lengths.</span>
+    </a>
+    <a href="./" style="--tint: var(--era-4);">
+      <span class="n">Make</span>
+      <span class="t">Four posters you could actually make</span>
+      <span class="d">Music, dry humour, the pub and books, with the layouts and the exact words.</span>
+    </a>
+  </nav>
+
+  <!-- ================= WHAT IT IS ================= -->
+  <section id="now">
+    <div class="sec-head">
+      <h2>What British culture actually looks like</h2>
+      <div class="eyebrow">Nine everyday things</div>
+    </div>
+    <p class="lede">
+      Ask someone in Britain to describe their culture and they'll probably shrug. It's easier to spot from
+      the outside. These are the things almost everyone there does, eats or argues about.
+    </p>
+
+    <div class="tiles">
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="A cup of tea">
+          <path d="M12 24h34v14a12 12 0 0 1-12 12H24a12 12 0 0 1-12-12z"/>
+          <path d="M46 28h5a6 6 0 0 1 0 12h-5"/>
+          <path d="M8 56h44"/>
+          <path d="M22 16c0-3 3-3 3-6M32 16c0-3 3-3 3-6" opacity="0.65"/>
+        </svg>
+        <h3>Tea, constantly</h3>
+        <p>Britain drinks around <b>100 million cups a day</b>. Tea is also a way of saying things — offering
+          someone a cup is how you say sorry, well done, or that you noticed they're upset.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" role="img" aria-label="A football">
+          <circle cx="32" cy="32" r="23"/>
+          <path d="M32 18l9 6.5-3.4 10.5h-11.2L23 24.5z" fill="currentColor" stroke="none"/>
+          <path d="M32 9v9M52 25l-8.5 6M52 42l-9-5M32 55v-8M12 42l9-5M12 25l8.5 6" stroke-linecap="round"/>
+        </svg>
+        <h3>Football, seriously</h3>
+        <p>The rules were written down in a London pub in <b>1863</b> and the game went everywhere. Which club
+          you support is usually decided by where you were born, and you can't change it.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="Fish and chips">
+          <path d="M16 22h32l-5 33H21z"/>
+          <path d="M22 22l4-11 5 9 5-11 5 13" opacity="0.85"/>
+          <path d="M30 22l3-9" opacity="0.85"/>
+          <path d="M16 30h32" opacity="0.5"/>
+        </svg>
+        <h3>Chips with everything</h3>
+        <p>Fish and chips, chips and gravy, chips and curry sauce. Britain's most popular takeaway is now
+          <b>curry</b> — a Foreign Secretary once called chicken tikka masala a true British national dish.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="An umbrella in the rain">
+          <path d="M8 30a24 24 0 0 1 48 0z"/>
+          <path d="M32 30v20a6 6 0 0 0 12 0"/>
+          <path d="M14 44l-3 8M26 48l-2 6M50 44l3 8" opacity="0.6"/>
+        </svg>
+        <h3>Talking about weather</h3>
+        <p>Not because it's dramatic — because it's <b>safe</b>. It's how strangers start a conversation
+          without having to be personal. Complaining about it together counts as bonding.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="Three people queueing">
+          <g><circle cx="14" cy="22" r="6"/><path d="M6 52v-9a8 8 0 0 1 16 0v9"/></g>
+          <g opacity="0.75"><circle cx="32" cy="22" r="6"/><path d="M24 52v-9a8 8 0 0 1 16 0v9"/></g>
+          <g opacity="0.5"><circle cx="50" cy="22" r="6"/><path d="M42 52v-9a8 8 0 0 1 16 0v9"/></g>
+        </svg>
+        <h3>Queueing, properly</h3>
+        <p>An orderly line is close to a rule. Push in and nobody will shout — you'll get a <b>tut</b>, a sigh
+          and a very cold look, which is worse.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="A speaker at a carnival">
+          <rect x="16" y="8" width="32" height="48" rx="3"/>
+          <circle cx="32" cy="24" r="8"/><circle cx="32" cy="24" r="2.5" fill="currentColor"/>
+          <circle cx="32" cy="44" r="5"/>
+          <path d="M54 22c4 6 4 14 0 20M8 22c-4 6-4 14 0 20" opacity="0.6"/>
+        </svg>
+        <h3>Carnival and festivals</h3>
+        <p><b>Notting Hill Carnival</b> fills west London every August with Caribbean sound systems and about
+          two million people. Glastonbury takes over a Somerset dairy farm every summer.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="A Sunday roast dinner">
+          <circle cx="32" cy="34" r="20"/>
+          <circle cx="32" cy="34" r="13" opacity="0.5"/>
+          <path d="M24 30c3-4 8-4 11 0" opacity="0.8"/>
+          <path d="M12 12l6 6M52 12l-6 6" opacity="0.55"/>
+        </svg>
+        <h3>The Sunday roast</h3>
+        <p>Meat, roast potatoes, too many vegetables and gravy, eaten late on a Sunday with family. Yorkshire
+          puddings are non-negotiable, even when the meat isn't beef.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="Fireworks">
+          <path d="M32 32V10M32 32l15-15M32 32h22M32 32l15 15M32 32v22M32 32l-15 15M32 32H10M32 32L17 17"/>
+          <circle cx="32" cy="32" r="4" fill="currentColor" stroke="none"/>
+          <g opacity="0.55"><circle cx="32" cy="8" r="2" fill="currentColor" stroke="none"/><circle cx="56" cy="32" r="2" fill="currentColor" stroke="none"/><circle cx="32" cy="56" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="32" r="2" fill="currentColor" stroke="none"/></g>
+        </svg>
+        <h3>Bonfire Night</h3>
+        <p>Every 5 November, fireworks and a bonfire — marking a failed attempt to blow up Parliament in 1605.
+          Most people setting off the fireworks couldn't tell you that.</p>
+      </div>
+
+      <div class="tile">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" role="img" aria-label="A speech bubble with a wink">
+          <path d="M8 14h48v30H34L20 56V44H8z"/>
+          <path d="M20 26c2-3 5-3 7 0" /><path d="M37 27h7" />
+          <path d="M22 36c5 4 13 4 18 0" opacity="0.8"/>
+        </svg>
+        <h3>Taking the mickey</h3>
+        <p>British humour is dry, sarcastic and usually aimed at <b>yourself</b>. Insulting your friends
+          affectionately is called banter, and being too serious about yourself is the real crime.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= NATIONS ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>It isn't one country</h2>
+      <div class="eyebrow">Four nations</div>
+    </div>
+    <p class="lede">
+      <b>Great Britain</b> is England, Scotland and Wales. The <b>United Kingdom</b> adds Northern Ireland.
+      They share a language and a football rivalry, and not much else.
+    </p>
+    <div class="nations">
+      <div class="nation" style="--tint: var(--era-2);">
+        <h3>England</h3>
+        <p>Morris dancing, cricket on a village green, the Proms, pantomime at Christmas, and a lot of
+          arguing about the correct way to make tea.</p>
+      </div>
+      <div class="nation" style="--tint: var(--era-1);">
+        <h3>Scotland</h3>
+        <p>Burns Night every January with haggis and poetry read out loud. Ceilidh dancing, bagpipes,
+          Highland games, and Gaelic still spoken in the islands.</p>
+      </div>
+      <div class="nation" style="--tint: var(--era-3);">
+        <h3>Wales</h3>
+        <p>Welsh is a living language taught in schools. The Eisteddfod is a national festival of music and
+          poetry, and male voice choirs are a real thing, not a stereotype.</p>
+      </div>
+      <div class="nation" style="--tint: var(--era-4);">
+        <h3>Northern Ireland</h3>
+        <p>Traditional music sessions in pubs, the Ulster fry for breakfast, Van Morrison, and
+          <em>Derry Girls</em> — which did more for its image than any advert.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ERA 1 ================= -->
+  <section id="era1" style="--tint: var(--era-1);">
+    <div class="era-head">
+      <div class="era-years">1890s</div>
+      <h2>Being 14 in the 1890s</h2>
+      <p class="drive">
+        You've probably already left school and started work. Fun costs pennies and happens
+        <b>in a crowd</b> — nothing is private, and nothing happens in your bedroom.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A music hall stage with curtains and gas footlights">
+          <rect x="14" y="14" width="372" height="196" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M14 14 H386 V56 Q200 92 14 56 Z" fill="currentColor" opacity="0.22"/>
+          <path d="M28 26 L96 26 L74 178 L28 178 Z" fill="currentColor" opacity="0.3"/>
+          <path d="M372 26 L304 26 L326 178 L372 178 Z" fill="currentColor" opacity="0.3"/>
+          <circle cx="200" cy="96" r="17" fill="currentColor"/>
+          <path d="M172 178 q10 -48 28 -52 q18 4 28 52 Z" fill="currentColor"/>
+          <path d="M186 132 q-22 6 -30 26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M214 132 q24 -4 30 -30" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="14" y1="188" x2="386" y2="188" stroke="currentColor" stroke-width="3"/>
+          <g fill="currentColor">
+            <circle cx="40" cy="200" r="6"/><circle cx="80" cy="200" r="6"/><circle cx="120" cy="200" r="6"/>
+            <circle cx="160" cy="200" r="6"/><circle cx="200" cy="200" r="6"/><circle cx="240" cy="200" r="6"/>
+            <circle cx="280" cy="200" r="6"/><circle cx="320" cy="200" r="6"/><circle cx="360" cy="200" r="6"/>
+          </g>
+          <text x="200" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">THE MUSIC HALL</text>
+        </svg>
+        <figcaption>
+          <b>Everyone sang along.</b> Music halls were loud, packed and cheap. The star sang the chorus once
+          and the whole room sang it back.
+        </figcaption>
+      </figure>
+
+      <div class="strands">
+        <div class="strand">
+          <h3>Music</h3>
+          <p>The <b>music hall</b> — singing, jokes and beer in the same room. A piano in the front room at
+            home. A brass band in the park on Sunday, made up of men from the local mill or mine.</p>
+        </div>
+        <div class="strand">
+          <h3>Stories</h3>
+          <p><b>Penny dreadfuls</b>: cheap, gory adventure stories sold weekly to boys, and disapproved of by
+            every adult. Dickens novels came out a chapter at a time, like a series drop.</p>
+        </div>
+        <div class="strand">
+          <h3>Saturday</h3>
+          <p>The football. Clubs were being started by factories, churches and pubs, and by 1888 there was a
+            proper league. Or the train to <b>Blackpool</b> for the day if you could afford it.</p>
+        </div>
+        <div class="strand">
+          <h3>Looking the part</h3>
+          <p>A flat cap and a neckerchief if you worked. Your good clothes came out on Sunday. Nobody
+            dressed differently because they were young — you dressed like a smaller adult.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="names">
+      <span class="lbl">Names worth knowing</span>
+      <b>Marie Lloyd</b> — the biggest music hall star, who sang cheeky songs straight at the cheap seats.
+      <b>Charles Dickens</b> — sold novels in monthly parts so ordinary people could afford them.
+      <b>W. G. Grace</b> — the huge bearded cricketer who made sport something you paid to watch.
+      Places: <b>Blackpool</b>, <b>the Canterbury music hall</b> in Lambeth, <b>Haworth</b> in Yorkshire
+      where the Brontë sisters wrote.
+    </p>
+  </section>
+
+  <!-- ================= ERA 2 ================= -->
+  <section id="era2" style="--tint: var(--era-2);">
+    <div class="era-head">
+      <div class="era-years">1930s</div>
+      <h2>Being 14 in the 1930s</h2>
+      <p class="drive">
+        There's a radio in the corner of the room and a cinema at the end of the street. For the first time
+        <b>the whole country sees and hears the same thing on the same night</b>.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A wireless radio set with a tuning dial">
+          <path d="M40 214 V90 q0 -52 160 -52 q160 0 160 52 V214 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M40 214 V90 q0 -52 160 -52 q160 0 160 52 V214 Z" fill="currentColor" opacity="0.07"/>
+          <circle cx="130" cy="132" r="46" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="130" cy="132" r="38" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          <g stroke="currentColor" stroke-width="2" opacity="0.75">
+            <line x1="130" y1="94" x2="130" y2="102"/><line x1="157" y1="105" x2="152" y2="111"/>
+            <line x1="168" y1="132" x2="160" y2="132"/><line x1="157" y1="159" x2="152" y2="153"/>
+            <line x1="130" y1="170" x2="130" y2="162"/><line x1="103" y1="159" x2="108" y2="153"/>
+            <line x1="92" y1="132" x2="100" y2="132"/><line x1="103" y1="105" x2="108" y2="111"/>
+          </g>
+          <line x1="130" y1="132" x2="152" y2="110" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="130" cy="132" r="6" fill="currentColor"/>
+          <rect x="208" y="92" width="128" height="82" rx="4" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.8">
+            <line x1="222" y1="106" x2="322" y2="106"/><line x1="222" y1="120" x2="322" y2="120"/>
+            <line x1="222" y1="134" x2="322" y2="134"/><line x1="222" y1="148" x2="322" y2="148"/>
+            <line x1="222" y1="162" x2="322" y2="162"/>
+          </g>
+          <circle cx="115" cy="194" r="9" fill="currentColor"/><circle cx="150" cy="194" r="9" fill="currentColor"/>
+          <text x="272" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="currentColor">B · B · C</text>
+        </svg>
+        <figcaption>
+          <b>One radio, one family, one programme.</b> You couldn't choose and you couldn't pause. If you
+          missed it, you missed it — and everyone at school talked about it the next day.
+        </figcaption>
+      </figure>
+
+      <div class="strands">
+        <div class="strand">
+          <h3>Watching</h3>
+          <p><b>The cinema, twice a week.</b> By the late 1930s Britain bought around 20 million tickets a
+            week. You'd sit through the newsreel, a cartoon and two films for the same money.</p>
+        </div>
+        <div class="strand">
+          <h3>Listening</h3>
+          <p>The <b>BBC</b> started in 1922. Comedy shows, news and dance bands, all live. Nobody had ever
+            heard a stranger's voice inside their own house before.</p>
+        </div>
+        <div class="strand">
+          <h3>Reading</h3>
+          <p><b>Penguin paperbacks</b> arrived in 1935 costing sixpence — the same as a packet of cigarettes.
+            Suddenly a proper book wasn't a posh object.</p>
+        </div>
+        <div class="strand">
+          <h3>Saturday</h3>
+          <p>Football in the afternoon, the dance hall in the evening. Big band music, and dances everyone
+            learned the steps to. Blackpool Tower Ballroom was the most famous floor in the country.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="names">
+      <span class="lbl">Names worth knowing</span>
+      <b>Gracie Fields</b> — born above a chip shop in Rochdale, became the best-paid film star in the world.
+      <b>George Formby</b> — Wigan, a ukulele and a grin; the country's favourite entertainer.
+      <b>Alfred Hitchcock</b> — from Leytonstone in east London, learned to make thrillers here before Hollywood.
+      <b>Allen Lane</b> — invented the cheap paperback. Places: <b>Broadcasting House</b> in London,
+      <b>Alexandra Palace</b>, where the world's first proper TV broadcast went out in 1936.
+    </p>
+  </section>
+
+  <!-- ================= ERA 3 ================= -->
+  <section id="era3" style="--tint: var(--era-3);">
+    <div class="era-head">
+      <div class="era-years">1960s</div>
+      <h2>Being 14 in the 1960s</h2>
+      <p class="drive">
+        You have your own money, your own records and — for the first time in history — <b>your own culture
+        that adults don't understand and aren't invited to</b>.
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A portable record player with a single on the turntable">
+          <path d="M34 96 L86 30 L370 30 L370 96" fill="none" stroke="currentColor" stroke-width="3"/>
+          <path d="M34 96 L86 30 L370 30 L370 96 Z" fill="currentColor" opacity="0.08"/>
+          <rect x="34" y="96" width="336" height="110" rx="5" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="150" cy="152" r="52" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="150" cy="152" r="44" fill="currentColor" opacity="0.12"/>
+          <circle cx="150" cy="152" r="34" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <circle cx="150" cy="152" r="26" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <circle cx="150" cy="152" r="17" fill="currentColor"/>
+          <circle cx="150" cy="152" r="4" fill="var(--plate)"/>
+          <line x1="316" y1="108" x2="196" y2="140" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="318" cy="107" r="8" fill="currentColor"/>
+          <path d="M160 20 q40 -14 80 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <g stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6">
+            <path d="M330 140 q12 14 0 28"/><path d="M348 128 q22 26 0 52"/>
+          </g>
+          <text x="200" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">THE RECORD PLAYER</text>
+        </svg>
+        <figcaption>
+          <b>Music you could take upstairs.</b> A single cost about six shillings and played in your room with
+          the door shut. That's the whole revolution, really.
+        </figcaption>
+      </figure>
+
+      <div class="strands">
+        <div class="strand">
+          <h3>Music</h3>
+          <p><b>The Beatles</b> from Liverpool in 1962, then everyone else. Caribbean families brought ska and
+            reggae to British cities. Pirate radio ships broadcast pop illegally until the BBC gave in and
+            started Radio 1 in 1967.</p>
+        </div>
+        <div class="strand">
+          <h3>Telly</h3>
+          <p><b>Doctor Who</b> from 1963 — watched from behind the sofa. <em>Top of the Pops</em> every week.
+            <em>Coronation Street</em>, set on a normal northern street, which had never been on TV before.</p>
+        </div>
+        <div class="strand">
+          <h3>Clothes</h3>
+          <p>This is when <b>youth style</b> is invented. Mods on scooters in sharp suits, rockers on
+            motorbikes in leather. Mary Quant's miniskirts on the King's Road. What you wore said which side
+            you were on.</p>
+        </div>
+        <div class="strand">
+          <h3>Saturday</h3>
+          <p>Town, with your mates and no adults. Record shop, coffee bar, dance. Then in 1966 the first
+            Caribbean <b>carnival on the streets of Notting Hill</b>.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="names">
+      <span class="lbl">Names worth knowing</span>
+      <b>The Beatles</b> — four working-class Liverpudlians who changed what a band could be.
+      <b>Claudia Jones</b> — started the Caribbean carnival that grew into Notting Hill Carnival.
+      <b>Delia Derbyshire</b> — made the <em>Doctor Who</em> theme out of tape loops, before synthesisers existed.
+      <b>Mary Quant</b> — the miniskirt, and London as a place people came to for clothes.
+      Places: <b>the Cavern Club</b> in Liverpool, <b>Abbey Road</b>, <b>Carnaby Street</b>.
+    </p>
+  </section>
+
+  <!-- ================= ERA 4 ================= -->
+  <section id="era4" style="--tint: var(--era-4);">
+    <div class="era-head">
+      <div class="era-years">Now</div>
+      <h2>Being 14 today</h2>
+      <p class="drive">
+        The phone in your pocket is a record shop, a cinema, a radio station and a recording studio.
+        <b>You don't just pick the culture — you can make it and put it out yourself.</b>
+      </p>
+    </div>
+    <div class="band"></div>
+
+    <div class="showcase">
+      <figure class="plate">
+        <svg viewBox="0 0 400 250" role="img" aria-label="A phone next to a stack of sound system speakers">
+          <rect x="30" y="40" width="120" height="180" rx="14" fill="none" stroke="currentColor" stroke-width="3"/>
+          <rect x="42" y="62" width="96" height="136" fill="currentColor" opacity="0.09"/>
+          <line x1="76" y1="52" x2="104" y2="52" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <line x1="58" y1="122" x2="58" y2="138"/><line x1="72" y1="104" x2="72" y2="156"/>
+            <line x1="86" y1="88" x2="86" y2="172"/><line x1="100" y1="112" x2="100" y2="148"/>
+            <line x1="114" y1="98" x2="114" y2="162"/>
+          </g>
+          <circle cx="90" cy="208" r="5" fill="currentColor"/>
+          <rect x="216" y="34" width="150" height="88" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+          <rect x="216" y="132" width="150" height="88" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+          <circle cx="264" cy="78" r="26" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="264" cy="78" r="10" fill="currentColor"/>
+          <circle cx="264" cy="176" r="26" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="264" cy="176" r="10" fill="currentColor"/>
+          <circle cx="330" cy="66" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="330" cy="164" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.55">
+            <path d="M180 92 q10 16 0 32"/><path d="M194 76 q20 32 0 64"/>
+          </g>
+          <text x="200" y="242" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="currentColor">BEDROOM TO EVERYWHERE</text>
+        </svg>
+        <figcaption>
+          <b>No permission needed.</b> Grime was made on cheap computers in east London flats and sent out on
+          pirate radio. Nobody signed it off. Twenty years later it headlines Glastonbury.
+        </figcaption>
+      </figure>
+
+      <div class="strands">
+        <div class="strand">
+          <h3>Music</h3>
+          <p><b>Grime</b> came out of Bow in east London in the early 2000s, made on school computers. Then UK
+            drill, Afroswing and whatever's next. British rap sounds British — the accents are the point.</p>
+        </div>
+        <div class="strand">
+          <h3>Watching</h3>
+          <p>Everything streams, so almost nobody watches at the same time. The exceptions still matter:
+            a big match, a final, <em>Bake Off</em> — the last few things the whole country does at once.</p>
+        </div>
+        <div class="strand">
+          <h3>Food</h3>
+          <p>Curry, kebabs, jollof, bubble tea, a chippy tea and a Sunday roast — all normal, all British.
+            Britain's food is basically a record of who moved there.</p>
+        </div>
+        <div class="strand">
+          <h3>Saturday</h3>
+          <p>Football, town, a festival in summer, Carnival in August. And a group chat running through all
+            of it, which is where most of the actual culture happens.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="names">
+      <span class="lbl">Names worth knowing</span>
+      <b>Stormzy</b> — from Croydon, started with YouTube freestyles, first Black British solo artist to
+      headline Glastonbury in 2019. <b>Dizzee Rascal</b> — made <em>Boy in da Corner</em> as a teenager in Bow
+      and won the Mercury Prize with it. <b>Adele</b> — Tottenham, went to the BRIT School.
+      <b>Michaela Coel</b> — from Hackney, wrote and starred in her own series.
+      Places: <b>Bow</b>, <b>Notting Hill</b>, <b>Glastonbury</b>, <b>Wembley</b>.
+    </p>
+  </section>
+
+  <!-- ================= SLANG ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>How the slang changed</h2>
+      <div class="eyebrow">Same job, different words</div>
+    </div>
+    <p class="lede">
+      Every generation invents words their parents don't use, mostly so their parents don't understand them.
+      British slang also changes by <b>city</b> — Liverpool, Glasgow and London don't sound alike at all.
+    </p>
+    <div class="slang">
+      <div class="slang-col" style="--tint: var(--era-1);">
+        <h3>1890s</h3>
+        <ul>
+          <li><b>chuffed</b> — really pleased</li>
+          <li><b>toff</b> — a rich, posh person</li>
+          <li><b>bobby</b> — a police officer</li>
+          <li><b>bloke</b> — a man (still going strong)</li>
+        </ul>
+      </div>
+      <div class="slang-col" style="--tint: var(--era-2);">
+        <h3>1930s</h3>
+        <ul>
+          <li><b>wizard</b> — brilliant, excellent</li>
+          <li><b>blighty</b> — Britain, said fondly</li>
+          <li><b>swell</b> — great</li>
+          <li><b>cheerio</b> — goodbye</li>
+        </ul>
+      </div>
+      <div class="slang-col" style="--tint: var(--era-3);">
+        <h3>1960s</h3>
+        <ul>
+          <li><b>fab</b> — fantastic</li>
+          <li><b>gear</b> — very good</li>
+          <li><b>grotty</b> — grim, horrible</li>
+          <li><b>naff</b> — rubbish, uncool</li>
+        </ul>
+      </div>
+      <div class="slang-col" style="--tint: var(--era-4);">
+        <h3>Now</h3>
+        <ul>
+          <li><b>peng</b> — attractive, excellent</li>
+          <li><b>bare</b> — loads of</li>
+          <li><b>long</b> — too much effort</li>
+          <li><b>safe</b> — thanks, or all good</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TABLE ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>The same story, four times over</h2>
+      <div class="eyebrow">Read across</div>
+    </div>
+    <p class="lede">
+      Every time a new machine arrives, culture gets cheaper — and a bigger group of people gets to join in.
+      That's the whole pattern.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">1890s</th>
+            <th scope="col">1930s</th>
+            <th scope="col">1960s</th>
+            <th scope="col">Now</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">The new machine</th>
+            <td class="c1">Cheap printing, trains</td>
+            <td class="c2">Cinema and radio</td>
+            <td class="c3">TV and the record player</td>
+            <td class="c4">The phone</td>
+          </tr>
+          <tr>
+            <th scope="row">Where you heard music</th>
+            <td class="c1">A packed hall, singing along</td>
+            <td class="c2">The family radio</td>
+            <td class="c3">Your own bedroom</td>
+            <td class="c4">Headphones, anywhere</td>
+          </tr>
+          <tr>
+            <th scope="row">Who chose it</th>
+            <td class="c1">Whoever ran the hall</td>
+            <td class="c2">The BBC</td>
+            <td class="c3">Record labels and TV</td>
+            <td class="c4">You — and the algorithm</td>
+          </tr>
+          <tr>
+            <th scope="row">Could you make it?</th>
+            <td class="c1">Only on a stage</td>
+            <td class="c2">Only if they hired you</td>
+            <td class="c3">If you got a record deal</td>
+            <td class="c4">Yes. Tonight. For free.</td>
+          </tr>
+          <tr>
+            <th scope="row">Who was left out</th>
+            <td class="c1">Almost everyone</td>
+            <td class="c2">Anyone not in London</td>
+            <td class="c3">Anyone labels ignored</td>
+            <td class="c4">Fewer people than ever</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+
+  <footer>
+    Every picture on this page is drawn in the page itself, so it works with no internet. Great Britain is
+    England, Scotland and Wales; the United Kingdom adds Northern Ireland.
+  </footer>
+
+</div>
+
+</body>
+</html>
